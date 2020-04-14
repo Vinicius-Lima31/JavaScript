@@ -8,10 +8,14 @@ const alunos = [
 
 console.log(alunos.map(a => a.nota))//                      somatorio    proximo
 
-const resultado = alunos.map(a => a.nota).reduce(function (acumulador, atual) {
+const resultado = alunos.map(a => a.nota).reduce(function (acumulador, atual) 
+{
     console.log(acumulador, atual) // Ele acumula cada nota
     return acumulador + atual
 }, 10) // é possivel passar valor inicial após a função, significa que o primeiro elemento é o 10
+
+// Nessa função acima, tem o "acumulador" que ja começou com valor 10
+// e o "atual" vai sendo acrescentado, ele percorre por tudo
 
 console.log(resultado) // somou todas notas dos alunos
 
