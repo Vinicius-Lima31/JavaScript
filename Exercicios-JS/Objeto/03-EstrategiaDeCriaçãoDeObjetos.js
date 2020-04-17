@@ -9,9 +9,11 @@ const obj2 = new Object
 console.log(obj2)
 
 // Funções Construtoras
+// Funnção que retorna um objeto e tem parametros
 function Produto(nome, preco, desc) {
     this.nome = nome // publico, visivel para fora do objeto
-    this.getPrecoDesc = () => {
+    this.getPrecoDesc = () => 
+    {
         return preco * (1 - desc)
     }
 }
