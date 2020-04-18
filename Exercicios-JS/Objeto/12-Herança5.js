@@ -9,7 +9,8 @@ String.prototype.reverse = function () { // reverter uma string
 
 console.log('Escola Cod3r'.reverse()) // consigo acessar as funções que coloco dentro de prototipo de String
 
-Array.prototype.pri = function () {
+Array.prototype.pri = function () 
+{
     return this[0] // this serve para acessar
 }
 

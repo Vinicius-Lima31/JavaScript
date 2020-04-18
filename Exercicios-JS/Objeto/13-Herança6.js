@@ -1,4 +1,5 @@
-function Aula(nome, videoID) {
+function Aula(nome, videoID) 
+{
     this.nome = nome
     this.VideoID = videoID
 }

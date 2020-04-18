@@ -9,14 +9,18 @@ const filha2 = Object.create(pai, { // atribuindo direto
     corOlhos: { value: 'Castanho', writalbe: false, enumerable: true }
 })
 
+// writable = false --> é porque não posso alterar
+// enumerable = true --> para mostrar
+
 console.log(filha2.nome)
 filha2.nome = 'Carla'
 console.log(`${filha2.nome} tem Cabelos ${filha2.corCabelo} e Olhos ${filha2.corOlhos}`)
 
 console.log(Object.keys(filha1)) //Caso eu não desse nome, ele não ia declarar, não fica de herança
-console.log(Object.keys(filha2))
+console.log(Object.keys(filha2)) // Mostra o que não tem de herança
 
-for (let key in filha2) {
+for (let key in filha2) 
+{
     console.log(key) // Mostra o que tem dentro,  herança e tudo
 }
 console.log()

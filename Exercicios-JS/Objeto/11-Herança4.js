@@ -10,7 +10,8 @@ console.log()
 
 // quando cria um objeto a partir de uma função, o seu __proto__ aponta para function.prototype
 MeuObjeto.prototype.nome = 'Anônimo' // igual eu atribui 0 no Object.protoype parecido
-MeuObjeto.prototype.falar = function () {
+MeuObjeto.prototype.falar = function () 
+{
     console.log(`Bom dia! Meu nome é ${this.nome}`)
 }
 
