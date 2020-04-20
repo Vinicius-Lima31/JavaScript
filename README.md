@@ -1,10 +1,7 @@
 # JavaScript
 
-## **Material Aulas JS - Udemy**
-
-Curso da **Udemy** de [JavaScript](https://www.udemy.com/course/curso-web/) 
-
+## **Material Aulas JavaScript - [Udemy](https://www.udemy.com/)**
 **Códigos Fontes** de cada Aula
 
-Para acessar o Curso [Clique Aqui](https://www.udemy.com/course/curso-web/)
+Para acessar o Curso de JavaScript [Clique Aqui](https://www.udemy.com/course/curso-web/)
 
