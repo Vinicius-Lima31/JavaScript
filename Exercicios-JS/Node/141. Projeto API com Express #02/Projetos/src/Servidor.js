@@ -4,7 +4,7 @@ const express = require("express")
 const app = express()
 
 // vou Precisar importar o "BancoDeDados.js"
-const BancoDeDados = require("./BancoDeDados.js")
+const BancoDeDados = require("./BancoDeDados.js") // Aqui importei o BancoDeDados.js
 
 app.get("/produtos", (req, res, next) => // Usando get encima do produtos, eu quero obter a lista de "produtos"
 {
