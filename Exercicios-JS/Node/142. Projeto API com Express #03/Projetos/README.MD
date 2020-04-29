@@ -1,4 +1,4 @@
-# Instalar Depedencia
+# Instalar Dependencia
 Terei que instalar a **Depedência** Body-parser
 
 O `body-parser` é um **módulo** capaz de converter o **body** da **requisição** para vários formatos. Um desses formatos é **json**, exatamente o que queremos.
