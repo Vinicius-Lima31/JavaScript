@@ -4,7 +4,7 @@ const express = require("express")
 const app = express()
 
 // vou Precisar importar o "BancoDeDados.js"
-const BancoDeDados = require("./BancoDeDados.js") // Aqui importei o BancoDeDados.js
+const BancoDeDados = require("./BancoDeDados.js")
 
 app.get("/produtos", (req, res, next) => // Usando get encima do produtos, eu quero obter a lista de "produtos"
 {
@@ -24,7 +24,7 @@ app.post("/produtos", (req, res, next) => // Finalmente vou criar um "post" e su
     // Nosso Objetivo é salvar um produto nesse Banco de Dados
 
     const produto = BancoDeDados.salvarProduto({
-        nome: req.body.name, // A forma de pegar os dados vem da "Requisição" "body" e cada um dos atributos que vieram
+        nome: req.body.nome, // A forma de pegar os dados vem da "Requisição" "body" e cada um dos atributos que vieram
         preco: req.body.preco
     })
     
@@ -38,3 +38,9 @@ app.listen(porta, () =>
     console.log(`Servidor Executando na Porta ${porta}`)
 })
 
+/*
+    req.body é o corpo da requisição, ou seja, um atributo que dentro dele tem
+    as informações relevantes que são enviadas na requisição. O que são essas informações 
+    irá depender da natureza da requisição, ou seja, quem envia a requisição que decide 
+    o que irá no seu corpo.
+*/
