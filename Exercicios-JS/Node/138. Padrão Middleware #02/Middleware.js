@@ -5,18 +5,18 @@
 
 const passo1 = (ctx, next) => // --> "ctx" é um objeto
 {
-    ctx.valor1 = "mid1"
+    ctx.valor1 = "mid1" // Os nomes das Variaveis tem que ser Difentes sempres
     next()  // Next é uma função que pula para proxima etapa
 }
 
 const passo2 = (ctx, next) => // --> "ctx" é um objeto
 {
-    ctx.valor2 = "mid2"
+    ctx.valor2 = "mid2" // Os nomes das Variaveis tem que ser Difentes sempres
     next()  // Next é uma função que pula para proxima etapa
 }
 
 // --> "ctx" é um objeto
-const passo3 = (ctx) => ctx.valor3 = "mid3" 
+const passo3 = (ctx) => ctx.valor3 = "mid3"  // Os nomes das Variaveis tem que ser Difentes sempres
 // no "passo3" eu não coloquei o next, pq eu não quero pular para proxima
 
 
