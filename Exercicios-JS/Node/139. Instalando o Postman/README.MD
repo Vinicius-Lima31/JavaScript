@@ -6,4 +6,4 @@ Será explicado melhor na prática.
 Primeiramente entramos no Site do **Postman** [Clicando Aqui](https://www.postman.com/)
 Baixamos o "Postman" e instalamos em seguida...
 
-É muito indicado e usado, é um Frameworkd Express.js feito para fazer requisições
+É muito indicado e usado, é um **Framework** Express.js feito para fazer requisições
