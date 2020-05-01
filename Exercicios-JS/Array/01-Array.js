@@ -14,7 +14,7 @@ console.log(aprovados[3])
 
 aprovados[3] = 'Paulo'
 aprovados.push('Abia')
-console.log(aprovados.length)
+console.log(aprovados.length) // Imprimindo tamanho do Array
 
 aprovados[9] = 'Rafael' // vai ter array, entre o que foi declaro e posição 9, porem tudo undefined
 console.log(aprovados.length)
