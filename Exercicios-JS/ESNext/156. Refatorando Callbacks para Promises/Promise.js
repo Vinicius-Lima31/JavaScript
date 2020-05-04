@@ -1,3 +1,9 @@
+/* 
+    Link Turma C: http://files.cod3r.com.br/curso-js/turmaA.json
+    Link Turma B: http://files.cod3r.com.br/curso-js/turmaB.json
+    Link Turma C: http://files.cod3r.com.br/curso-js/turmaC.json
+*/
+
 const http = require("http")
 
 const getTurma = letra =>
