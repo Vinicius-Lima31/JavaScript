@@ -21,9 +21,9 @@ const axios = require("axios") // Vamos importar o "axios"
 
 // Será mais explicado mais a frente o que ira acontecer aqui abaixo
 // "get" eu obtenho informações do servidor
-axios.get(url).then(response =>
+axios.get(url).then( response =>
 {
-    const funcionarios = response.data
+    const funcionarios = response.data // "data" pego todos os dados, feito para pegar, peguei e joguei na constante funcionarios
     console.log(funcionarios)   // Sera imprimido tudo da url
 })
 
