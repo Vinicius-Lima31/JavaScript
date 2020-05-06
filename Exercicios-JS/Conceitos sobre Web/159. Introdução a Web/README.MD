@@ -13,6 +13,9 @@ Nada mais que um **Protocolo** que é uma *aplicação* *software*, e esse *soft
 
 ## Temos essas Camadas:
 
+![Sem título](https://user-images.githubusercontent.com/62820033/81224762-997ebe80-8fbe-11ea-836a-f11b1f04a2b6.png)
+
+
 ## Aplicação
 * Http, Ftp, Smtp
 * Comunicação Processo-A-Processo
