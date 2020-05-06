@@ -5,12 +5,13 @@
     **I**nternet **P**rotocol
 
 **Transmission** -> Orientada a conexão e Confiavel.
+
 **Internet Protocol** -> Roteamento entre Redes.
 
 ## TCP/IP
 Nada mais que um **Protocolo** que é uma *aplicação* *software*, e esse *software* usa um padrão de projeto chamado **layers**.
 
-**Temos essas Camadas:**
+## Temos essas Camadas:
 
 ## Aplicação
 * Http, Ftp, Smtp
