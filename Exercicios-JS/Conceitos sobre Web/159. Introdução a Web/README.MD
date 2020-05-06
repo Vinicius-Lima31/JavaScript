@@ -12,7 +12,7 @@ Nada mais que um **Protocolo** que é uma *aplicação* *software*, e esse *soft
 
 **Temos essas Camadas:**
 
-## Aplicação*
+## Aplicação
 * Http, Ftp, Smtp
 * Comunicação Processo-A-Processo
 * Número da Porta
