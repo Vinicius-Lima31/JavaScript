@@ -35,3 +35,12 @@ Nada mais que um **Protocolo** que é uma *aplicação* *software*, e esse *soft
 * Ethernet, Wi-fi...
 * Mac address
 * Fisica (Hadware) e enlace(Software)
+
+## Anatomia do Ipv4...
+
+![ip4](https://user-images.githubusercontent.com/62820033/81224883-c16e2200-8fbe-11ea-8709-ecfead93ed7a.png)
+
+
+## Conceito de Porta
+
+![porta](https://user-images.githubusercontent.com/62820033/81225077-08f4ae00-8fbf-11ea-95c7-6105938205a3.png)
