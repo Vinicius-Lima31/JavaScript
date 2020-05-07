@@ -18,3 +18,9 @@ Ter dentro dde um **Servidor Web**, varios **sites** sendo Atendidos.
 
 ## Web Stack
 ![web stack](https://user-images.githubusercontent.com/62820033/81327695-0e5f0080-9072-11ea-80de-22457c561e4b.png)
+
+### LAMP
+- [x] Linux
+- [x] Apache
+- [x] MySQL
+- [x] PHP
