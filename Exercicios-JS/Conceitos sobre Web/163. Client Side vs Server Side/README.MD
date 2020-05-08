@@ -35,6 +35,8 @@ O  **Cliente** fornece paara o usúario uma saida, a paginna renderizada que ele
 ## Links:
 **O que é client-side e server-side?** [Clique Aqui](https://tableless.github.io/iniciantes/manual/obasico/o-que-front-back.html)
 
+[Client-Side e Server-Side](https://www.gigasystems.com.br/artigo/60/client-side-e-server-side)
+
 
 #### Linguagens Client-Side:
 * HTML
