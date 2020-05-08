@@ -9,6 +9,7 @@ Então, os dois aqui, são **protocolos** que juntamente comm **HTTP** faz com q
 
 ## Certificado <> Protocolo
 "**Certificado SSL/TLS**"
+
             ↓
 "**Certificado usados com SSL/TLS**
 
