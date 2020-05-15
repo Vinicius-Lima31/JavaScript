@@ -8,7 +8,7 @@ Instalamos de forma global:
 Entrando na pasta onde está meus arquivos.
 `cd exercicios-Web/HTML`
 
-Usamos o `http-server .` com esse comando, conseguimos acessar ele através de uma porta, por padrão ele acessa a porta 8080.
+Usamos o `http-server .` com esse comando, conseguimos acessar ele através de uma porta, por padrão ele acessa a **porta 8080**.
 
 ![porta 8080](https://user-images.githubusercontent.com/62820033/82000338-62e41c00-962e-11ea-9d49-049c56ed6de1.png)
 
