@@ -1,26 +1,27 @@
-<!DOCTYPE html> <!-- Usei um jeito simples e rapido de criar o HTML-->
+<!DOCTYPE html> 
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios HTML</title>
+    <style> 
+        #conteudo{ /*São coisas que eu quero aplicar dentro do "section" através do id "conteudo" */
+            
+            padding: 30px 0px; /*Que é um espaçamento, ele tera 30px em cima, e 0px nas laterais, depois iremos entrar em mais detalhes de css*/
+        }
+    </style>
 </head>
 <body>
     <header> <!--Cabeçalho-->
         <h1>Exercícios HTML</h1>
     </header>
-     <!-- Navegação -->
     <nav>
-        <!-- Aqui a baixo está 2 formas de criar um link, porém eu vou meio que nomear como se fosse um id o link-->
-<!--    <a href="exercicios/teste.html">00 - Teste</a> - <!-- Link --> <!-- o href, é para ficar igual link, para eu passar o mouse por cima e mudar o icone do mouse-->
-<!--    <a href="exercicios/temp.html">TEMPPPP</a> -->
-    
         <a href wm-nav="exercicios/teste.html">00 - Teste</a> -
-        <a href wm-nav="exercicios/temp.html">TEMPPPP</a>
+        <a href wm-nav="exercicios/texto1.html">01 - Texto 1</a> - 
+        <a href wm-nav="exercicios/texto2.html">02 - Texto 2</a>
     </nav> <!-- Vou criar uma pasta chamada exercicios, com html dentro-->
     <section id="conteudo"></section>
     <footer>
-        <br>
         Curso de Web Moderno
     </footer>
     <script> // Aqui dentro vamos Digitar o código JavaScript
