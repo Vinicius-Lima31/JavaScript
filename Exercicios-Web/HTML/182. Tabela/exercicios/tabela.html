@@ -1,0 +1,75 @@
+<!-- Uma tabela, tem cabeçalho, rodapé, corpo e etc, é como se fosse uma página mesmo -->
+
+<!--<table border="1">  Defini uma Tabela. TAG que define uma tabela -->
+
+<table>    
+<!-- border seria uma propriedade para a tabela, apenas um estilo visual-->
+    <caption>Produtos</caption> <!-- O que representa essa tabela -->
+    <thead> <!-- Vai definir o cabeçalho da minha tabela -->
+        <tr>
+            <!-- São os cabeçalhos das 4 colunas da minha tabela -->
+            <th>Produto</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+            <th>Total</th>
+        </tr>
+    </thead> <!-- Eu poderia tirar o <thead> ou <tbody> mas por uma questão de semãntica é melhor colocar -->
+
+    <tbody> <!-- Corpo da minha tabela -->
+        <tr> <!-- <tr> 1° linha da minha tabela -->
+            <!-- Cada item abaixo esta represantando uma coluna -->
+            <td>iPad</td>
+            <td>3289,00</td>
+            <td>5</td>
+            <td>16445,00</td>
+        </tr>
+        <tr> <!-- Segunda linha da nossa Tabela -->
+            <td>Sansung S9</td>
+            <td>2649,00</td>
+            <td>8</td>
+            <td>21192,00</td>
+        </tr>
+    </tbody>
+
+    <tfoot> <!-- Rodapé da Tabela -->
+        <tr> <!-- Linha da Tabela -->
+            <td colspan="3">Total</td>
+            <!--<td colspan="3" rowspan="2">Total</td> <!-- Nesse caso aqui, eu quero oucupar mais de uma Coluna, e também quero adcionar mais de 1 item em uma linha -->
+            <!-- Ou seja, vou oucupar 3 espaços da tabela -->
+            <!-- Ou seja, o rowspan vai fazer com que o "Total" tenha 2 valores nele -->
+            <td>376637,00</td>
+        </tr>
+        <!--<tr>
+            <td>Teste </td>
+        </tr>-->
+    </tfoot>
+</table>
+
+<!-- Agora vou adcionnar um pouco de Estilo-->
+<style>
+    table{ /*Tirei as bordas da Tabela <table>*/
+        border-collapse: collapse; /* Coloquei para não ter Borda */
+    }
+
+    th, td{ /**/
+        padding: 10px; /* Faz com que dentro do Elemento causa mais um espaçamento */
+        
+   }
+
+   thead tr{ /* no <tr> que esta dentro de <thead> */
+
+        border-bottom: solid 3px #444; /* Adcionei uma borda solida, de 3px com a cor de cinza */
+   }
+
+   tbody tr:hover{ /* "hover" Significa: quando o click do mouse passar por cima  */
+        background-color: #dedede; /* Cinza bem clarinho */
+        /* Coloquei só no <tr> do body, nos outros <tr> não funcionara */
+   }
+
+   tfoot{ /* Adcionando estilo no Rodapé da Tabela */
+
+        background-color: #444; /* Coloquei um cinza mais escuro */
+        color: #fff; /* Fonte Branca */
+        font-weight: bold; /* Negrito */
+   }
+</style>

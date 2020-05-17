@@ -1,0 +1,63 @@
+<h1>Formulário</h1>
+
+<form action="http://localhost:3003/usuarios" method="POST">
+<!-- Vou fazer uma requisição para essa URL, e o Método que vou usar aqui é o "POST"-->
+
+    <!-- Esse name é essencial para eu fazer alterações no "backend"-->
+    <input type="text" name="nome"> <!-- Quero incluir esse úsuario-->
+    <input type="password" name="senha"> <!-- "input" de senha -->
+    <textarea name="bio" cols="30" rows="10"></textarea> <!-- Texto em uma área, vou botar um estilo também-->
+    <!-- bio de biografia -->
+
+    <div>
+        <!-- Seria a bolinha que selecionamos -->
+        <input type="radio" name="tipo" value="Admin"> Admin <!-- esse "value" é o valor que vai ta dentro do tipo, no output do VSCODE ira imprimir - - > tipo: "Professor" -->
+        <input type="radio" name="tipo" value="Regular"> Regular
+        <input type="radio" name="tipo" value="Professor"> Professor
+        
+    </div>
+
+    <div>
+        <input type="checkbox" name="ativo"> Ativo <!-- Caixinha de marcar [x] desse jeito aqui-->
+    </div>
+
+    <select name="estado">
+        <!-- Lista para eu selecionar -->
+        <option value="">Selecione</option> <!-- Sem valor -->
+        <option value="ac">Acre</option>
+        <option value="ba">Bahia</option>
+        <option value="ce">Ceara</option>
+    </select>
+
+    <!-- Um select de multiplas opções -->
+    <select name="interesses" multiple size="5"> <!-- Multiplo, com 6 opções, porém iraa mostrar 5, terei que rolar a bolinha para ver a 6°-->
+        <option value="js">JavaScript</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="python">Python</option>
+        <option value="go"> Go</option>
+        <option value="c">C</option>
+
+        <!-- Eu tenho 6 opções, porém só irar mostrar 5 -->
+    </select>
+
+    <button>Incluir</button> <!-- Na hora que eu apertar o botão -->
+</form>
+
+<!-- AULA 184 -->
+
+<style>
+    input, textarea{
+        display: block; /* 1 Elemennto em cada linha */
+        margin-bottom: 10px; /* Distancia de um input pro outro */
+    }
+
+    input[type=radio], /*<input> do tipo "radio" */
+    input[type=chekbox]{
+        display: inline; /* Tudo na mesma linha */
+    }
+
+    select{
+        display: block;
+    }
+</style>
