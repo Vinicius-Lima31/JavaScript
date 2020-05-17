@@ -46,9 +46,13 @@ Percebe que só posso selecionar um, isso porque os `name` delas são **"tipo"**
 
 ## <select> <option>
 `<select name="estado">`
+    
     `<option value="ac">Acre</option>`
+    
     `<option value="ba">Bahia</option>`
+    
     `<option value="ce">Ceara</option>`
+    
 `</select>`
 
 `<option>` seria isso aqui:
@@ -65,12 +69,19 @@ Percebe que só posso selecionar um, isso porque os `name` delas são **"tipo"**
 
 ## <select> um select com multiplas opções
 `<select name="interesses" multiple size="2">`
+    
     `<option value="js">JavaScript</option>`
+    
     `<option value="java">Java</option>`
+    
     `<option value="php">PHP</option>`
+    
     `<option value="python">Python</option>`
+    
     `<option value="go"> Go</option>`
+    
     `<option value="c">C</option>`
+    
 `</select>`
 
 **Ira mostrar assim:**
