@@ -44,7 +44,7 @@ Percebe que só posso selecionar um, isso porque os `name` delas são **"tipo"**
 
 ![caixa](https://user-images.githubusercontent.com/62820033/82160429-b2fbf200-986b-11ea-830c-be049248e28b.png)
 
-## <select> <option>
+## select option
 `<select name="estado">`
     
     `<option value="ac">Acre</option>`
