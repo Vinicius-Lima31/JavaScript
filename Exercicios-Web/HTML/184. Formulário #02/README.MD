@@ -1,4 +1,4 @@
-## Adcionando input para senha
+## Adcionando "input" para senha
 `<input type="password" name="senha">` 
 
 ![input senha](https://user-images.githubusercontent.com/62820033/82159667-521deb00-9866-11ea-85ab-4b91e16e4b13.png)
@@ -7,12 +7,12 @@ Adcionando no formulário:
 
 ![cad](https://user-images.githubusercontent.com/62820033/82159704-8c878800-9866-11ea-8e6e-1df4d0dcf6b4.png)
 
-## Adcionando textarea
+## Adcionando "textarea"
 É como se fosse um texto para eu preencher:
 
 ![czxczxczxczxczxczxczxczxczxczxczxcxzczxczxczxclzxkjczxlkcz](https://user-images.githubusercontent.com/62820033/82159751-fdc73b00-9866-11ea-96d5-81692c2f9bab.png)
 
-## Estilo textarea
+## Estilo "textarea"
 `input, textarea{
     display: block; /
     margin-bottom: 10px; 
@@ -39,7 +39,7 @@ Percebe que só posso selecionar um, isso porque os `name` delas são **"tipo"**
 
 ![czxvvv](https://user-images.githubusercontent.com/62820033/82160032-c6f22480-9868-11ea-822d-4f8e75dc4678.png)
 
-## input do tipo chekbox
+## input do tipo "chekbox"
 `<input type="checkbox">` é uma caixinha que marcamos, por exemplo:
 
 ![caixa](https://user-images.githubusercontent.com/62820033/82160429-b2fbf200-986b-11ea-830c-be049248e28b.png)
@@ -67,7 +67,7 @@ Percebe que só posso selecionar um, isso porque os `name` delas são **"tipo"**
 
 ---
 
-## <select> um select com multiplas opções
+## select um select com multiplas opções
 `<select name="interesses" multiple size="2">`
     
     `<option value="js">JavaScript</option>`
