@@ -7,6 +7,7 @@ Primeiramente criei uma pasta chamada **form** dentro da pasta **exercicios**, d
 
 ## Criando Formulario no HTML
 `<form action="http://localhost:3003/usuarios" method="POST">`
+
     `<input type="text" name="nome"> `
     `<button>Incluir</button>`
 `</form>`
