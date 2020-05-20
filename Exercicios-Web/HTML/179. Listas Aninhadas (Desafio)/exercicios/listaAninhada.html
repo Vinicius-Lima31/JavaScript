@@ -60,3 +60,38 @@
         }
     })
 </script>
+
+<!--
+
+    Falando sobre "class" e "propriedade", e também sobre o ul.stylle.display = d === "none" ? "block" : "none" 
+
+
+1) Você pode utilizar classes ou propriedades personalizadas, mas a maneira de selecioná-los é diferente.
+
+Atributo: 
+
+let x = document.querySelectorAll("[wm-folder]");
+
+Classe: 
+
+let x = document.querySelectorAll(".example");
+Qual dos dois utilizar vai muito da prática do programador. Particularmente, gosto de utilizar classe para css e atributos para o script, por exemplo. O que importa é você manter o padrão dentro do mesmo projeto, para que ele fique organizado.
+
+
+
+2) Na verdade
+
+const d = ul.style.display
+ul.style.display = d === "none" ? "block" : "none"
+Na primeira linha é salvo em 'd' o status atual de ul.style.display.
+
+Na segunda linha é feita uma atribuição. O operador ternário funciona da seguinte maneira.
+
+Se d === 'none' for true ul.style.display = block. Se d === 'none' for false ul.style.display = 'none' entendeu?
+
+Ele não está setando ul.style.display = d.... d faz parte do teste do operador ternário. Será setado block ou none dependendo do valor de d.
+
+Essas duas linhas servem para trocar o valor de ul.style.display. Se for none, seta block e vice versa.
+
+-->
+

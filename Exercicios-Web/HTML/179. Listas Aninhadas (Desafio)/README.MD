@@ -19,3 +19,9 @@ Função feita para pegar o quem depois, do que eu marquei, por exemplo.
 ![czxcz](https://user-images.githubusercontent.com/62820033/82132147-fcd4d180-97b2-11ea-9e71-d92b3aedc339.png)
 
 Após o click ele guarda, se eu clicar novamente ele ira abrir!
+
+
+## class e propriedade e a função ul.style.display
+Falando sobre **class** e **propriedade**, e também sobre o `ul.style.display = d === "none" ? "block" : "none"`
+
+![class propriedade e ul style dplasy](https://user-images.githubusercontent.com/62820033/82507128-d4611600-9ad7-11ea-82c2-22b66df4cee4.png)
