@@ -20,15 +20,15 @@ Ele serve para carregar um valor que não quero exibir.
 
 ## JavaSript (server.js)
 `app.post("/usuarios/:id", (req, resp, next)` => // Vou passar um id para ser alterado
-`{`
+`{
 
-    `console.log(req.params.id) // quero que ele mostre o "id"`
+    console.log(req.params.id) // quero que ele mostre o "id"
     
-    `console.log(req.body) // Mostre o que foi adcionado no formulario`
+    console.log(req.body) // Mostre o que foi adcionado no formulario
     
-    `resp.send("Parabéns. Usuario Alterado") `
+    resp.send("Parabéns. Usuario Alterado") 
     
-`}) `
+})`
 
 Não tem muito misterio, recebo um **id** por **parametro** da **url** e altero.
 
