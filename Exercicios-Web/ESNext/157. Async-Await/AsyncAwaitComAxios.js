@@ -31,7 +31,6 @@ let obterAlunos1 = async () =>
 obterAlunos1()
     .then(nomes => console.log(nomes))
 
-// Feito por min:
 
 //const axios = require('axios')
  
