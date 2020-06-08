@@ -1,3 +1,6 @@
+// Servidor Criado com "Express"
+// Precisamos do "Express" e "body-parser"
+
 const express = require("express")
 const app = express()
 
@@ -22,3 +25,7 @@ app.listen(3003, ()=>
 })
 
 // Se não tivesse o body-parser não iria funcionar, porque não teria como ele ir fazer um parser no corpo da requisição
+
+// Executando o html
+// http-server -c-1
+// Executando com memoria cache desativada
