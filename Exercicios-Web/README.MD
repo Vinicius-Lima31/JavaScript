@@ -103,7 +103,7 @@
 
 ## Gerenciamento de arquivos
 * Ctrl + N Novo Arquivo
-* Ctrl + O Abrir arquivo ...
+* Ctrl + O Abrir arquivo
 * Ctrl + S Salvar
 * Ctrl + Shift + S Salvar como ...
 * Ctrl + K S Salvar tudo
