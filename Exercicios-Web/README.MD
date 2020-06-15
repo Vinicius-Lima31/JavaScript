@@ -1,4 +1,4 @@
-# Atalhos VSCODE
+# Atalhos de Teclas do VSCODE
 
 ## Geral
 * Ctrl + Shift + P, paleta de comando F1 Show
@@ -103,7 +103,7 @@
 
 ## Gerenciamento de arquivos
 * Ctrl + N Novo Arquivo
-* Ctrl + O Abrir arquivo ...
+* Ctrl + O Abrir arquivo
 * Ctrl + S Salvar
 * Ctrl + Shift + S Salvar como ...
 * Ctrl + K S Salvar tudo
