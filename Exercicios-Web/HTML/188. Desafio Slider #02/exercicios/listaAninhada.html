@@ -1,0 +1,62 @@
+<h1>Projeto</h1> 
+<ul class="tree">
+    <li>
+        <span wm-folder>backend</span> <!-- Primeiramente joguei a palavra "backend" dentro de um <span>-->
+        <!-- E vou marcar esse <span> com "wm-folder", e vou apliar em outras lista também, abaixo.-->
+        <ul> 
+            <li>
+                <span wm-folder>app</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>vendas.js</li>
+                </ul>
+            </li>
+            <li>
+                <span wm-folder>config</span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span wm-folder>frontend</span>
+        <ul>
+            <li>
+                <span wm-folder>public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>inde.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<!-- Pronto todas as pastas que eu queria ja estão devidamente marcadas com "wm-folder" -->
+<!-- Agora vou localizar ela através do JavaScript -->
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script> // Código JavaScript Para locolizar os span
+
+    document.querySelectorAll('[wm-folder]').forEach(folder => // Estarei marcando todos os elementos que estão marcado com a propriedade "wm-folder"
+    { // Peguei todos os elementos marcado com "wm-folder" e usarei um forEach para acessar todos
+        
+        folder.onclick = function(e) // Após eu clicar, ele ira fazer uma função
+        {
+            // console.log("Teste") // Apenas para ver se funcionou
+            
+            // Agora eu terei que usar a <ul>, terei que fazer alteração nela, existe um comando que serve exatamente para pegar o próximo tag depois do folder(<span>), no caso ele ira pegar o que vem depois do <span>
+            const ul = folder.nextElementSibling // Essa função serve para pegar a próxima coisa após o <span> que seria exatamente o <ul>
+            console.log(ul) // Tou imprimindo de fato, para ele ver que realmente estou pegando a <ul>, que armazenei na constante ul
+
+            const d = ul.style.display // Para representar o display atual daquela <ul>
+            ul.style.display = d === "none" ? "block" : "none" // Aqui eu fiz uma operação ternaria, "block" significa que vai ficar invisivel, e "none" visivel
+            // Fiz uma operação ternaria, porque se ele não tiver igual a um, ele estara igual a outro
+        }
+    })
+</script>
