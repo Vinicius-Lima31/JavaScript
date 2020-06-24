@@ -1,0 +1,51 @@
+<!-- Tag de Vídeo -->
+<!-- 
+    <video src="" id="meuVideo"></video> 
+    Posso colocar dessa forma, porém irei fazer dessa abaixo...
+-->
+
+
+<!-- Após eu colocar o vídeo, eu não consigo dar play nem nada, está apenas uma tela preta indicando que tem um vídeo, para isso irei fazer umas alterações na tag-->
+<video id="meuVideo" width="800" height="450" controls autoplay controlsList='nodownload'> <!-- width: largura de 800px ; height: Altura de 450px  -->
+  <!-- Usando a propriedade "controls" os controles do vídeo irão aparecer! -->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"> <!-- Tentara executar esse, caso não funcione, ira imprimir a mensagem de baixo. -->
+        Seu Browser não suporta a tag de vídeo.
+</video>
+
+<!-- 
+    Através do "control" eu posso usar outros comandos:
+    autoplay: o vídeo será executado sem o play, automaticamente quando eu entrar na página, o vídeo ja sera executado!
+    controlsList="nodownlad" com esse comando eu impediria que alguem tentasse fazer qualquer download do meu vídeo.
+-->
+
+<div wm-progresso="meuVideo" class="progresso">
+    <!-- Quero criar um botão para dar play no vídeo -->
+    <div>
+    <!-- Essse <div> de dentro, estara responsavel pela barra -->
+    </div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso{ /* No Readme do GitHub, estará a foto dessa borda cinza que criei */
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444; /*Adcionei uma borda cinza */
+        margin: 20px;
+    }
+
+    .progresso > div { /*Botando estilo dentro de um <div> da "class" "progresso"*/
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 144px;
+        width: 30%; /*Estara preenchida 30% da barra*/
+        /*usando o "px" refere ao tamanho, usando "%" será o preenchimento. */
+        
+    }
+</style>
