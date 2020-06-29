@@ -8,8 +8,12 @@ Através do **controls** eu posso usar comandos em um vídeo:
 ![borda](https://user-images.githubusercontent.com/62820033/85615963-702ff580-b633-11ea-963e-f42a15a5e9c5.png)
 
 
+
+
 ### Borda com mais estilos:
 ![borda red](https://user-images.githubusercontent.com/62820033/85616431-167bfb00-b634-11ea-9777-f7da6d4543c0.png)
+
+
 
 
 ![czxcxz](https://user-images.githubusercontent.com/62820033/85616692-8094a000-b634-11ea-9863-b5ced008ac28.png)
