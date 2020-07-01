@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Anatomia CSS</title>
+    <style>
+        .seletor{ /* Aqui dentro irei colocar todas propriedades CSS que quero Aplicar */
+            color: #fff; /* Cores */
+            font-size: 30px; /* Tamanho da fonte, coloquei tamanho 30pixels */
+            text-align: center; /* Centralizei o texto, posso usar "right", "left" ..*/
+            /* Multiplos valores */
+            border: solid 5px navy; /*Borda solida, de 5pixel com a cor navy */
+            /*Eu poderia botar a borda "dashed" que seria a borda toda picotada */
+
+            font-family: Helvetica, monospace; /* Colocando font, caso ele não encontre "Helvetica", ele ira colocar a "monospace", simples assim.*/
+        
+            /* Alem de eu ter possibilidades multiplos valores, também tenho como chamar funções pré-definidas */
+            /* Funções */
+            width: calc(100% - 100px); /* 100% da tela, menos 100 pixel*/
+            background-color: rgb(34, 153, 189); /* Cor de Fundo */
+        }
+
+        /* Usando uma pseudo-classe */
+        .seletor:hover{
+            background-color: orangered; /* esse "hover" significa que quanto eu passar o mouse por cima, ele ira aplicar, quando eu passar o mouse por cima, o background ira mudar de cor */
+            font-size: 50px; /* Quando eu passar mouse ele ira aumentar */
+        }
+
+        /* Usando um Pseudo-elemento */
+        .seletor::first-letter{ /*Primeira letra */
+            font-size: 60px; /* Primeira letra ficara desse tamanho */
+            font-weight: bold; /* Tipó negrito, ficou mais gordinha */
+        }
+
+        /*  
+            pseudo-classe 1 : 
+            pseudo-elemtento 2 :
+        */
+
+        /* Padrao de nomenclatura ? */
+        /* dash-case(mais usado) ou camelCase */
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="seletor">Conteúdo</div>
+</body>
+
+</html>
