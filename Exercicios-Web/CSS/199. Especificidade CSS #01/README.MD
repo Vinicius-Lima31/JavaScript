@@ -1,4 +1,4 @@
-Esse [link](https://developer.mozilla.org/pt-BR/docs/Web/CSS), é um site explicando sobre Especificidade 
+Esse [link](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity), é um site explicando sobre Especificidade 
 
 ### Em Linhas gerais...
 1. regra com `!important`
