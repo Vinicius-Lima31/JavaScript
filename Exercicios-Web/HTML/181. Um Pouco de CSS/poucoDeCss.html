@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>Um Pouco de CSS</title>
+        <link rel="stylesheet" href="poucoDeCss.css"> <!--Aqui eu peguei o CSS, do arquivo CSS-->
+        <!-- Aqui a baixo vo colocar código CSS-->
+        <style>
+            /*Uso do CSS da Tag h1*/
+            h1{ /* Eu abro o h1 com chaves, e dentro dele eu coloco toda alteração que eu quero. */
+                font-size: 20px; /*Aqui seria o tamanho da fonte */
+
+                /* display: none; Isso aqui ira fazer o "h1" sumir*/
+                background-color: red; /* Coloquei a parte de fora do CSS de vermelho */
+                
+                position: absolute; /* Posição Absoluta, vai fixar em algum local*/
+                top: 400px; /*Significa que eu alinhei o h1, a 400px do topo, e 400px da esquerda*/
+                left: 400px;
+             /* right: 400px; se eu quiser alinhar com a direito eu uso rigth */
+            }
+
+            /*Uso do CSS na class "fundoVermelho"*/
+            /*Para acessar uma class eu uso notação ponta*/
+            .fundoVermelho{ /* Agora iremos, usar CSS na class que eu criei, para isso colocamos um ponto antes do nome da class*/
+                background-color: #f00; /*o que vem na frente do 00, define o escuro e claro da cor, poderia ser #a00, seria um vermelho um pouco mais escuro */
+
+                background-color: red;
+                background-color: rgb(255, 0, 0);
+
+            }
+
+            .negrito{
+                font-weight: bold; /*Colocando peso de negrito*/
+            }
+
+            /*Para acessar um id eu uso notação cerquilha #*/
+            #textoPrincipal{ /*Acessando um id*/
+                font-size: 40px; /*Tamahno da fonte*/
+                font-weight: bold; /*Peso da fonte, negrito*/
+                color: #fff; /*Cor da Fonte*/
+                background-color: #444; /*parte de fora*/
+            }
+        </style><!--Existem formas de referencia algo que eu queira dar estilo-->
+        <!--Uma forma e  adcionando um ID -->
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <!-- Texto Visual-->
+        <span id="TextoPrincipal">Texto 1</span><br> <!-- <br> é uma tag de quebra de linha-->
+        <span class="fundoVermelho negrito">Texto 2</span><br> <!-- Tenho 2 class associado a esse span-->
+        <span class="fundoVermelho">Texto 3</span> <!-- Quero apenas o Texto Vermelho-->
+        <!-- class eu posso usar mais de uma vez dentro da pagina-->
+        <!-- Tanto class quanto id, é uma forma de idenficador-->
+    </body>
+</html>
+
+<!-- id é unico, e a class é algo que da pra reusar-->

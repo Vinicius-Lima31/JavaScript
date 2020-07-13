@@ -1,0 +1,83 @@
+<!-- Tag de Vídeo -->
+<!-- 
+    <video src="" id="meuVideo"></video> 
+    Posso colocar dessa forma, porém irei fazer dessa abaixo...
+-->
+
+
+<!-- Após eu colocar o vídeo, eu não consigo dar play nem nada, está apenas uma tela preta indicando que tem um vídeo, para isso irei fazer umas alterações na tag-->
+<video id="meuVideo" width="800" height="450"  autoplay controlsList='nodownload'> <!-- width: largura de 800px ; height: Altura de 450px  -->
+  <!-- Usando a propriedade "controls" os controles do vídeo irão aparecer! -->
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4"> <!-- Tentara executar esse, caso não funcione, ira imprimir a mensagem de baixo. -->
+        Seu Browser não suporta a tag de vídeo.
+</video>
+
+<!-- 
+    Através do "control" eu posso usar outros comandos:
+    autoplay: o vídeo será executado sem o play, automaticamente quando eu entrar na página, o vídeo ja sera executado!
+    controlsList="nodownlad" com esse comando eu impediria que alguem tentasse fazer qualquer download do meu vídeo.
+-->
+
+<div wm-progresso="meuVideo" class="progresso">
+    <!-- Quero criar um botão para dar play no vídeo -->
+    <div>
+    <!-- Essse <div> de dentro, estara responsavel pela barra -->
+    </div>
+</div>
+
+<div>
+    <button wm-play="meuVideo">Play</button>
+    <button wm-pause="meuVideo">Pause</button>
+</div>
+
+<style>
+    .progresso{ /* No Readme do GitHub, estará a foto dessa borda cinza que criei */
+        height: 20px;
+        width: 500px;
+        border: solid 1px #444; /*Adcionei uma borda cinza */
+        margin: 20px;
+    }
+
+    .progresso > div { /*Botando estilo dentro de um <div> da "class" "progresso"*/
+        background-color: red;
+        color: #fff;
+        height: 100%;
+        text-align: right;
+        font-size: 144px;
+        width: 0%; /*Estara preenchida 30% da barra*/
+        /*usando o "px" refere ao tamanho, usando "%" será o preenchimento. */
+        
+    }
+</style>
+
+<!-- Aula 190 Desafio -->
+
+<script>
+    function configurarVideo(id)
+    {
+        const video = document.getElementById(id) // pego o vídeo através do ID passado por parametro da função
+        video.oncontextmenu = () => false // aqui eu impesso o download através do click do mouse 
+        // Através disso que fiz na linha de cima, não seria possivel abrir um Menu com o click do mouse em cima do vídeo.
+
+        // Eu posso botar para ele filtrar de forma especifica, pelo atributo e pelo valor do atributo ; Minuto 3:22
+        document.querySelector(`[wm-play=${id}]`).onclick = e => video.play() // filtrou pelo atributo, e também pelo atributo que possui um ID especifico.
+        document.querySelector(`[wm-pause=${id}]`).onclick = e => video.pause()
+        // Após isso, eu irei tirar os Controls, ja que tenho botões para executar e pausar!
+
+        // Agora iremos fazer o Progresso
+        // Quando a barra do vídeo andar, a minha barra tera que acompanhar também
+        setInterval(() =>
+        {
+            const percentual = (video.currentTime / video.duration) * 100 // Com esse calculo eu tenho o percentual do vídeo
+            // Nessa linha acima, eu tenho o percentual do vídeo
+            // currentTime : posição em segundos do vídeo
+            // duration : tempo em segundos total do vídeo
+
+            const valorDiv = document.querySelector(`[wm-progresso=${id}] > div`) // Quero pegar a <div> que esta dentro do wm-progresso
+            valorDiv.style.width = `${percentual}%`
+            valorDiv.innerHTML = `${percentual.toFixed(1)}%` // "innerHTML" para postar no HTML
+        }, 500) // 500 milisegundos
+    }
+
+    configurarVideo("meuVideo") // Passei o ID da tag do Video que eu havia colocado na linha 9
+</script>

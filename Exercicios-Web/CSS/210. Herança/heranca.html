@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Herança</title>
+    <style>
+        body{ /* Percebe que apliquei pelo <body> e não pelo <h1>, mas mesmo assim foi aplicado no <h1> isso é "Herança" */
+            font-family: monospace;
+            font-size: 40px;
+            border: solid 3px red;
+            padding: 50px;
+        }
+
+        div{
+            border: inherit; /* Essa é a palavra que usamos para herdar*/
+            /* meu <div> herdou a borda de <body> */
+            /* Também irei herdar o padding */
+            padding: inherit;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Herança</h1>
+    <div>Estou herdando
+        
+        <span><p>
+            teste
+        </p></span>
+    </div>
+</body>
+
+</html>

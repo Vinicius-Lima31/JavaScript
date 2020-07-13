@@ -1,0 +1,46 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <style> 
+        #conteudo{ /*São coisas que eu quero aplicar dentro do "section" através do id "conteudo" */
+            
+            padding: 30px 0px; /*Que é um espaçamento, ele tera 30px em cima, e 0px nas laterais, depois iremos entrar em mais detalhes de css*/
+        }
+    </style>
+</head>
+<body>
+    <header> <!--Cabeçalho-->
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wm-nav="exercicios/teste.html">00 - Teste</a> -
+        <a href wm-nav="exercicios/texto1.html">01 - Texto 1</a> - 
+        <a href wm-nav="exercicios/texto2.html">02 - Texto 2</a>
+    </nav> <!-- Vou criar uma pasta chamada exercicios, com html dentro-->
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script> // Aqui dentro vamos Digitar o código JavaScript
+        document.querySelectorAll("[wm-nav]").forEach(link => // com forEach estou percorrendo todos link a partir do querySelectionAll
+        {
+            link.onclick = function(e) // Vou associar uma função a esse click, após eu clicar, ele vai executar essa função
+            {
+                // "e.preventDefault()" ele vai previnir o comportamento padrão que é navegaar
+                e.preventDefault() // ele vai travar após o "click" ele não ira para outra página após eu clicar no "link", ele vai continuar naa página
+             // console.log("ação")
+
+                const conteudo = document.getElementById("conteudo") // ira ir no "section" com o id "conteudo"
+                //fetch(link.href) // "fetch" é uma função mais nova, chamada AJAX, fiz uma requisição Ajax em cima do link do HTML
+                fetch(link.getAttribute("wm-nav"))
+                    .then(resp => resp.text()) // isso é uma função, que serve para pegar conteúdo HTML, da página que eu fiz a requisição, como é uma Promise eu uso then
+                    .then(html => conteudo.innerHTML = html) // Aqui eu pego o que obtive na requisição, e jogo dentro do conteudo(que é section do HTML)
+
+            }
+        })
+    </script>
+</body>
+</html>

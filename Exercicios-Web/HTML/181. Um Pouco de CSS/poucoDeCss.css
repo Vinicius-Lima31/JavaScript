@@ -1,0 +1,6 @@
+#textoPrincipal{ /*Acessando um id*/
+    font-size: 40px; /*Tamahno da fonte*/
+    font-weight: bold; /*Peso da fonte, negrito*/
+    color: #fff; /*Cor da Fonte*/
+    background-color: #444; /*parte de fora*/
+}

@@ -1,0 +1,33 @@
+<!-- Posso ter JS, CSS dentro de um HTML, mas não é recomendado-->
+
+<!DOCTYPE html> <!-- Para Definir que estou trabalhando com HTML5 -->
+<html><!-- Tudo começa a partir da Tag HTML -->
+    <!-- Pagina HTML é dividida em 2 partes, Head e Body -->
+    <head>
+        <!-- É formado por elementos não visuais, com exceção do Titulo da Pagina-->
+        <!-- Caso eu queira importar algo, eu faço aqui-->
+        <meta charset="utf-8"> <!-- Tipo de formatação de Texto, o padrão é UTF-8, com ele podemos usar acentuação, etc.-->
+        <title>Anatomia HTML</title> <!-- Titulo do HTML-->
+        <link rel="stylesheet" href="style.css"> <!-- Por enquanto não vamos mexer nisso, mas aqui estariamos importando um CSS. Referenciado arquivo externo -->
+        <script src=""></script> <!-- Por enquanto não vamos nos importar com isso, mas aqui eu estaria importando o arquivo JavaScript. Referenciado arquivo externo-->
+
+    </head>
+    <body>
+        <header> <!-- Cabeçalho -->
+            <h1>Exercícios <HTML></HTML></h1> <!-- Representa o Cabeçalho mais importante -->
+        </header> 
+        <nav> <!-- Tag de Navegação, -->
+            <a href="/">Navegação 1</a> <!-- a Tag "a" representa um link-->
+        </nav> 
+        <select id="conteudo"> <!-- Tag que vai representar um conteúdo. Eu estaria dizendo que essa tag estaria representando meu "conteúdo", através do ID-->
+            Conteúdo
+        </select>
+        <aside> <!-- Conteúdo Lateral -->
+            Lateral
+        </aside>
+        <footer> <!-- Rodapé da minha Página -->
+            Rodapé
+        </footer> 
+    <!-- Isso que mostrei acima são TAG's semanticas que vão mostrar o que estou tentando fazer. -->
+    </body>
+</html> <!-- Tag que envolve todo meu HTML -->
