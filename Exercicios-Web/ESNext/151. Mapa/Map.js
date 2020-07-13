@@ -6,6 +6,7 @@ const tecnologias = new Map() // Declarei tipo "Map"
 tecnologias.set("React", {framework: false})
 tecnologias.set("Angular", {framework: true})
 
+
 // Percebe que se eu tentar acessar com um simples: tecnologias.React não vai funcionar
 console.log(tecnologias.React) // undefined
 // Preciso usar um "get"
