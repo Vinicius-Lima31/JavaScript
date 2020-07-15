@@ -1,0 +1,1 @@
+### Minuto 3:40 Explica melhor o fator do display.

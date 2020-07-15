@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Display</title>
+    <style>
+        body{
+            font-size: 40px;
+            color: #fff;
+            background-color: coral;
+        }
+        ul{ padding: 0px; }
+        div { background-color: seagreen; }
+        span { background-color: dodgerblue; }
+        li { background-color: purple; }
+
+        div, span, li { /* Tudo que eu botar aqui dentro, será aplicado nessas 3 tag's */
+            width: 50%; /* Ira dimuinuir o tamanho, antés estava 100%, agora estar apenas 50% */
+            width: 200px;
+            height: 80px; /* Mexendo na altura, adcionei 80px de altura */
+            padding-top: 30px;
+            text-align: center; 
+            /* Tudo isso acima que mexi, apenas o "padding-top;" foi adcionado no <span>, o resto não foi, isso tem haver com 'display', veremos isso agora... */
+
+            /* display: block;  Por padrão o <div> já vem "block", então não teve alteração. */
+            /* e as alterações foram feitas no <span> */
+
+            /* display: inline; Eles vão ficar na mesma linha, e com isso algumas coisas foram ignoradas, com display inline eu não consigo mexer na largura (width) e nem na altura (heigth) */
+            /* Se eu quiser deixar elas do lado, porem com a altura e largura alterada, eu uso a propriedade: display: inline-block; */
+            display: inline-block;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>Texto 1</div>
+    <span>Texto 2</span>
+    <span>Texto 3</span>
+    <ul>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+</body>
+
+</html>
