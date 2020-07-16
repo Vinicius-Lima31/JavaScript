@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Origem CSS: Externo, Interno e Inline</title>
+    <style>
+        /* Está vazio e iremos preencher, iremos alterar o <h1> */
+        body{
+            background-color: aquamarine;
+        }
+    </style>
+    <!-- Iremos referenciar o Arquivo "externo.css" que criamos na pasta css-->
+    <!-- link:css -->
+
+    <link rel="stylesheet" href="css/externo.css"> <!-- esse "rel" significa "relação" -->
+    <!-- href = referencia --> 
+
+    <!-- Percebe que na Página ficou com a cor GOLD que foi aplicado no externo
+     Isso porque o que se sobresai é o ultimo, que sera o ultimo a ser processado -->
+</head>
+
+<body style="background-color: coral;"> <!-- Inline, não é recomendado, por falta de organização-->
+    <h1>E agora?</h1>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tamanho Box</title>
+    <style>
+        body {
+            font-size: 45px;
+            margin: 0;
+        }
+
+        div {
+            background-color: deepskyblue;
+            width: 100%; /* Já está em 100%, mas coloquei aqui! */
+            height: 300px; /* Altura de 300px */
+            padding: 100px;
+
+            /* 100% é o tamanho do conteúdo, como eu aumentei o padding, o 100% também aummentou! */
+            border: solid 20px greenyellow;
+            box-sizing: content-box; /* Aqui tem que ter tamanho de 100% 4:14*/
+            box-sizing: border-box; /* Agora é considerado apenas conteúdo */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        O tamanho do Box é...
+    </div>
+</body>
+</html>
