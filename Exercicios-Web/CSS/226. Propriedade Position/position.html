@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Position</title>
+    <style>
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border:solid 5px #222;
+            color: #fff;
+        }
+        .static{
+            top: 100px; /* Por ser Estatica não foi considerada */
+            left: 100px; /* Por ser Estatica não foi considerada*/
+            background-color: steelblue;
+        }
+
+        .fixed{
+            position: fixed; /* Fixei a posição em um unico lugar */
+            bottom: 30px; /* Posiçionamento estara a 30px de parte de baixo */
+            right: 0px;
+            background-color: tomato;
+        }
+        
+        .relative1{
+            position: relative;
+            left: 50px;  /* afastado 50px da esquerda */
+            top: 5px;   /* afastado 5px do topo */
+            background-color: seagreen;
+        }
+
+        .absolute1{
+            position: absolute; /* Ele ira passar por cima de outros elementos, ele passa por cima */
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+        
+        .relative2 {
+            position: relative;
+            left: 250px;
+            top: 2000px; /* vai ficar la em baixo */
+            width: 200px; /* largura de 200px */
+            height: 200px; /* altura de 200px */
+            background-color: slategrey;
+        }
+
+        .absolute2 {
+            position: absolute; /* Ele sera Absoluta sobre o elemento pai */
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky {
+            position: -webkit-sticky; /* é para o browser do safari */
+            position: sticky; /* vídeo explica melhor 10:00 */
+            background-color: #777;
+            top: 0px; /* QQuando chegar a 0px do topo, ele vai fixar nessa posição, após a rolagem de tela */
+
+            /* o Position: sticky; vai ficar na tela sempre, ele sempre ficara no topo, mesmo eu rolando a pagina */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="static">Static (Padrão)</div>
+    <div class="fixed">Fixed</div>
+    <div class="relative1">Relative</div>
+    <div class="absolute1">Absolute</div>
+
+    <div class="relative2">
+        <div class="absolute2"></div>
+    </div>
+
+    <div class="sticky">Sticky</div>
+    <p style="padding-bottom: 2000px;">Opa</p> <!-- Botei pading de baixo a 2000px, para ter um sistema de rolagem -->
+</body>
+
+</html>
