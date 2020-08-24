@@ -1,3 +1,7 @@
+## box-sizing: border-box;
+![box sizing border box](https://user-images.githubusercontent.com/62820033/91065705-336a8580-e607-11ea-83e6-9deb8185ef78.png)
+
+
 ## Colocando Estilo
 ![cod](https://user-images.githubusercontent.com/62820033/88968533-d7ba1000-d285-11ea-83af-7b5f4198e5c6.png)
 
