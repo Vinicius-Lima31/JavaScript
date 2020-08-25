@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Card</title>
+    <style>
+        /* Aula aqui:  */
+
+        .curso {
+            float: left; /* ou "display: inline-block; " */
+            vertical-align: top; /* caso não tenha foto, ou o link esteja errado, o conteudo mudara de tamanho, porem continuara alinhado no topo com os outros elementos 7:30*/
+            font-family: Verdana, sans-serif;
+            border: solid 1px #CCC; /* borda solida */
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3); /* O box-shadow é uma propriedade do CSS, é utilizado para adicionar efeitos de sombra em volta de um elemento. Você pode especificar mais de um efeito, os separando com virgulas. */
+            height: 300px;
+            width: 260px;
+            margin: 5px 20px;
+            padding: 5px /* para dar um leve espaçamento de dentro da imagem*/
+        }
+
+        .curso img{
+            width: 100%; /* fiz com que as imagens, se adequam totalmente ao espaço dela */
+            max-height: 50%; /* no Máximo 50% a Imagem, mas que isso eu não quero */
+        }
+
+        .curso-info{ /* onde fica o nome dos professor, descrição... */
+            padding: 10px;
+            height: 90px; /* aqui ele gerouu um overflow, ele se sobrepos sobre outra tag, iremos resolver isso na linha de baixo */
+            overflow: hidden; /* o que tivesse acima de 90px, ele ira sumir com esse comando */
+            /*
+                A propriedade overflow especifica quando o conteúdo de um elemento de nível de bloco deve ser cortado, 
+                exibido com barras de rolagem ou se transborda do elemento
+            */
+        }
+
+        .curso-info h4 {
+            font-size: 1.4em;
+            font-weight: 100; /* tirei o peso da fonte, deixei ela mais fininha */
+            margin: 0; /* existia uma margin, entre o nome e a foto, eu tirei agora! */
+
+        }
+
+        .curso-preco {
+            float: right;
+            padding: 10px;
+        }
+
+        .preco-de {
+            text-decoration: line-through; /* tracejando o número, ira ficar tracejado o preço */
+            color: firebrick;
+        }
+
+        .preco-por {
+            color: green;
+            font-weight: bold; /* negrito */
+            font-size: 1.4em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Card</h1>
+
+    <h2>Objetivo</h2>
+    <img src="http://files.cod3r.com.br/curso-web/card.png" height="340" alt="Objetivo">
+
+    <h2>Resultado</h2>
+    <div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso1.jpg" />
+            <div class="curso-info">
+                <h4>Docker: Ferramenta essencial para Desenvolvedores</h4>
+                <p>Prof. Fulano</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+        <div class="curso">
+            <img src="http://files.cod3r.com.br/curso-web/curso2.jpg" />
+            <div class="curso-info">
+                <h4>Web Moderno com Javascript + Projetos</h4>
+                <p>Prof. Sicrano Filho</p>
+            </div>
+            <div class="curso-preco">
+                <span class="preco-de">R$80,00</span>
+                <span class="preco-por">R$50,00</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

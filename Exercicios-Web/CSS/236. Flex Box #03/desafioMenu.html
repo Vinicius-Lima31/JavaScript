@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <!-- Aqui eu ja importei uma fonte -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * { /* Universal */
+            box-sizing: border-box;
+            /*
+            A propriedade CSS box-sizing é utilizada
+             para alterar a propriedade padrão da box model, 
+             usada para calcular larguras (widths) e alturas (heights)
+             dos elementos. É possível usar essa propriedade para emular
+             o comportamento dos navegadores (browsers) que não 
+             suportam corretamente a especificação
+             da propriedade CSS box model.
+            */
+        }
+
+        body{
+            margin: 0; /* Tirando a margem */
+            font-family: 'Oswald', sans-serif; /* fonte que baixei "Oswald" */
+            background-color: lightgray; /* Aquele cinza que vimos */    
+        }
+
+        .cabecalho {
+            background-color: #333;
+            border-bottom: solid 5px #4faddb; /* Borda solida, em baixo */
+            height: 80px;
+            box-sizing: content-box; /* conteudo de 80px, e a borda do lado de fora */
+        }
+
+        .logo {
+            display: inline-block; /* https://medium.com/collabcode/pare-de-chutar-e-aprenda-como-funciona-o-display-inline-block-4e6cba2f19d4 */
+            height: 80px; /* https://www.maujor.com/tutorial/propriedade-css-display.php#:~:text=display%3A%20inline%2Dblock&text=Um%20bloco%20inline%20%C3%A9%20colocado,como%20se%20fosse%20um%20bloco. */
+            padding: 15px; /* pra todos os lados */ 
+        }
+
+        .logo img {
+            height: 100%; /* a imagem estará oucupando todo 100% do espaço dedicado a ela */
+            /* Imagem 100% no cabeçalho */
+        }
+
+        .menu-toggle { /* é aquele botãozinho que foi colocado ao lado do logo */
+            float: right; /* mandei o botão pra direita */
+            color: #eee;
+            background-color: #555;
+            border: solid 1px #777; /* Adcionando Borda */
+            border-radius: 5px; /* Borda redonda */
+            height: 40px; /* 40px de altura */
+            padding: 10px 20px;
+            margin: 20px 15px; /* Adcionando margem após o boton */
+        }
+
+        .menu {
+            display: inline-block;
+            vertical-align: top; /* A propriedade  vertical-align do CSS especifica o alinhamento vertical de um inline ou caixa table-cell */
+            /* https://developer.mozilla.org/pt-BR/docs/Web/CSS/vertical-align#:~:text=A%20propriedade%20vertical%2Dalign%20do,inline%20ou%20caixa%20table%2Dcell.&text=A%20propriedade%20vertical%2Dalign%20pode,de%20sua%20caixa%20de%20linha. */
+            height: 80px;
+            padding: 25px;
+        }
+
+        .menu ul {
+            margin: 0; /* tirei a margem */
+            padding: 0; /* tirei o padding */
+            
+        }
+        
+        .menu li {
+            display: inline-block; /* coloquei tudo na mesma linha */
+        }
+
+        .cabecalho a{
+            text-decoration: none; /* tirando a linha de baixo dos nomes da navegação */
+            color: #eee;
+            font-size: 1.3em;
+        }
+
+        .menu a  {
+            padding: 15px;
+        }
+        .autenticacao {
+            float: right; /* jogando pra direita */
+            height: 80px;
+            padding: 25px;
+        }
+
+        .autenticacao a {
+
+        }
+
+        .menu a:hover,
+        .menu a.selected { /* qualquer um desses 2 sever, quando eu passar o mouse por cima, ele ira realizar uma ação */
+            background-color: #4faddb;
+            color: #000;
+        }
+
+        /* Minuto 10:08, falando sobre o selected, ele fica selecionado, igual hover, porém irei usar no JavaScript */
+    
+        .botao {
+            border-radius: 30px; /* bordar redonda */
+            padding: 10px 25px;
+            margin: 10px;
+        }
+
+        .destaque {
+            background-color: #f50a31; /* botão redondo vermelho */
+            color: #fff;
+        }
+
+        @media(min-width: 679px) { /* se a largura minima do menu toggle for 679, ela vai sumir */
+            .menu-toggle {
+                display: none;  /* sumir */
+            }
+        }
+
+        @media(max-width: 680px) { /* até 680 */
+            .menu{
+                display: none;
+            }
+        }
+
+        @media(max-width: 910px) {
+            .autenticacao {
+                display: none;
+            }
+        }
+
+    /* Agora iremos pra parte do javaScript */       
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio">Início</a> <!-- esse # é pra manter na mesma página -->
+                </li>
+                <li>
+                    <a href="#cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        window.onhashchange = function(e) { /* Sempre que o hash muda, ele chama essa função aqui */
+            const oldURL = e.oldURL.split("#")[1] /* Dividei e peguei a segunda parte, no caso o nome */
+            const newURL = e.newURL.split("#")[1]
+            console.log(oldURL, newURL)
+            const oldMenu = document.querySelector(`.menu [href='#${oldURL}']`)
+            const newMenu = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldMenu && oldMenu.classList.remove("selected") /* class para remover o selected da onde eu havia clicado*/
+            newMenu && newMenu.classList.add("selected")    /* adcionna o selected aonde eu cliquei agora */
+        } // Minuto 17:10 explica melhor 
+
+    </script>
+</body>
+
+</html>

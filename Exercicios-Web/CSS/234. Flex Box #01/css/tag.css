@@ -1,0 +1,29 @@
+body{ /* Alterando <body> */
+    font-size: 40px; /* fonte tamanho 40px */
+}
+
+ul, ol{ /* Alterando <ul> e <ol> */
+    padding: 0; /* tirando "padding" do <ul> e <ol> deixando eles encostado na ponta */
+
+}
+
+li{
+    margin-left: 60px; /* 60px de margem a esquerda */
+}
+
+.tag{ /* Class tag do HTML */
+    border: solid 4px; /* Borda solida de 4px*/
+    margin: 5px; /*Margen de 5px após borda */
+}
+
+/* Indo agora pro tag.js (JavaScript) */
+
+/* Voltando aqui no Css, após mexer no JS, apenas para melhorar design */
+.tag label{
+    color: #fff;
+    font-size: 25px;
+    vertical-align: top; /* Botei para alinhar o topo, para ficar bem na quina */
+    margin-right: 10px; /* Margin de 110px a direita */
+    padding: 0px 5px 3px 3px; /* Depois será melhor explicado isso aqui */
+
+}
