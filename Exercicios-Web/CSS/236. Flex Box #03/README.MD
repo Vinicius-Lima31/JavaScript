@@ -1,0 +1,1 @@
+O flex-shrink se assemelha bastante ao flex-grow, ambos têm peso para a distribuição, sendo que no flex-shrink a distribuição é do espaço que falta no container, enquanto que no flex-grow a distribuição é do espaço que sobra dentro do container. Como cada elemento do container vai ficar com uma fatia desses espaços, o que vai dizer é exatamente o peso.
