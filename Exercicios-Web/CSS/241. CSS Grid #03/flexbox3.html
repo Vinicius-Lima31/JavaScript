@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #03</title>
+    <!-- <link rel="stylesheet" href="css/tag.css"> -->
+    <style>
+        /* ... */
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-direction: row; /* Não vai mudar nada, porque por padrão ja era "row" */
+        }
+
+        .flex-container div{
+            flex-basis: 100px; /* Estou aplicando 100px nos outros elementos, no caso o <div> 1 até o 4, possuem 100px cada */
+            /* o flex-basis é a forma padrão pra definir o tamanho dos elementos pelo main axis */
+            width: 200px; /* "vai perder". Tentei alterar por aqui, porém o flex-basis tem prevalencia sobre o width */
+            
+            /* Minuto 2:40 */
+
+        }
+
+        .flex-container div:nth-child(4){ /* pegar o 4° elemento */
+            /* grow shrink basis <-- ordem */
+            flex: 3 6 100px;
+        }
+
+        .flex-container{
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div >1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <!-- <script src="js/tag.js"></script> -->
+</body>
+
+</html>

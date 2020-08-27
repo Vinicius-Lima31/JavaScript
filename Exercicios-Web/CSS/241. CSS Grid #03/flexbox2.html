@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #02</title>
+    <!-- <link rel="stylesheet" href="css/tag.css"> -->
+    <style>
+        /* ... */
+        div{
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+        }
+
+        .flex-container div {
+            box-sizing: border-box; /* o tamanho da caixa vai também considerar a borda */
+        }
+
+        .flex-container {
+           display: flex;
+           height: 300px; /* altura de 300px */
+           width: 600px; /* largura de 600px */
+        }
+
+        .flex-container div:nth-child(3){ /* ira aplicar pro 3° filho, no caso na 3° <div> */
+            background-color: indianred;
+            order: 1; /* todos por padrão possui order(ordem) 0, como eu alterei para 1, ele tera um peso maior, consequentimente ele ficara para ultimo */
+            order: 0; /* se eu voltar para 0, ele tera o mesmo peso de antes, voltara para posição que oucupava antes, de acordo com HTML */
+            order: -1; /* colocando uma menor, ele sera executado antes de qualquer uma */
+            align-self: center; /* ira centralizar o 3° filho central*/
+            align-self: flex-end; /* ira por no final */
+            align-self: flex-start; /* ira por no começo */
+            align-self: stretch; /* padrão */
+        }
+
+        .flex-container div {
+            width: 100px; /* aumentei a largura, porém após o ultimo div, ainda tem um espaço */
+            flex-grow: 0; /* Não mudou nada */
+            flex-grow: 1; /* Todos cresceram de forma igual, foi dividido o espaço que faltava igualmente para cada, é explicado isso melhor no arquivo README.MD */
+        }
+
+        .flex-container div:nth-child(1) { /* ele vai pegar o 3 que está no primeiro elemento, ou o 1 que esta no primeiro elemento do HTML? ele ira pegar o 1 que está marcado como primeiro do HTML */
+            flex-grow: 2; /* o 1° elemento vai ter espaço maior que os outros, porque ele tem o peso2, será multiplicado pelo peso, que no caso é 2, então o 1° elemento tera mais espaço */
+        }
+
+        .flex-container {
+            width: 300px; /* ira diminuir, porem estára divido os <div> da forma que eu ordenei */
+            flex-shrink: 1; /* foi encolhido, ele encolhe o espaço */
+        }
+
+        .flex-container div:nth-child(1) { /* encolhi o primeiro elemento */
+            flex-shrink: 5;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+    <!-- <script src="js/tag.js"></script> -->
+</body>
+
+</html>

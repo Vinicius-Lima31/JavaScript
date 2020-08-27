@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox #01</title>
+    <!-- <link rel="stylesheet" href="css/tag.css"> -->
+    <style>
+        div {
+            border: solid 5px dodgerblue;
+            font-size: 40px;
+            margin: 5px;
+        }
+
+        .big{
+            font-size: 1.5em; /* ela vai ficar 50% maior que as demais */
+        }
+
+        .flex-container {
+            display: flex; /* tenho que marcar ela como flex, com isso estou dizendo que a class agora esta marcada como um flex-container */
+            flex-direction: column; /* Organizei por Coluna */
+            flex-direction: column-reverse; /* Ele usa o "Main axis" como coluna, porém de forma reverso */
+            flex-direction: row-reverse; /* alem de reverter a ordem, ele vai colocar como float right (reverter a direita) */
+            flex-direction: row; /* essa é a propriedade padrão */
+            width: 50%; /* botei que a largura só tenha 50% */
+
+            /* Após eu usar o width para 50%, ouve um overflow, uma sobreposição, podemos usar um comando que quebre a linha */
+
+            flex-wrap: wrap; /* quebrar a linha, e não acontece o overflow */
+            flex-wrap: wrap-reverse; /* reverte a linha de cima com a de baixo */
+            flex-flow: row wrap;
+            flex-wrap: row wrap;
+            height: 200px; /* como eu limitei a altura ele precisou quebrar em varias colunas */
+            flex-flow: column-reverse wrap;
+            flex-flow: row wrap; /* vai alinhar em linha reta e quebrar linha */
+
+            /* "wrap" serve para quebrar uma linha */
+
+            /* main axis */
+            justify-content: flex-start; /* tou justificando ele no começo do main axis */
+            justify-content: flex-end; /* tou justificando no final, tera mais diferença nos elementos da linha de baixo */
+            justify-content: center; /* tou justificando ele centralizado, fica no centro */
+            justify-content: space-around; /* ele ira colocar um espaço medido entre cada elemento, em volta de cada elemento vai ter mesmo espaço */
+            flex-direction: row-reverse;
+            justify-content: space-between; /* vai ficar o espaço apenas entre os elementos, e não nos cantos */
+        
+            
+            /* Cross Axis.. posso fazer essas operações usando Cross Axis */
+            height: 400px;
+            /* aling-items, site: https://developer.mozilla.org/pt-BR/docs/Web/CSS/align-items#:~:text=A%20propriedade%20CSS%20align%2Ditems,do%20bloco%20que%20o%20cont%C3%A9m.*/
+            /* Em Flexbox ele controla o alinhamento dos itens em Cross Axis */
+            align-items: stretch; /* é o padrão, não ira mudar nada */
+            align-items: baseline; /* ele vai alinhar pela "baseline" pelo tamanho da fonte */
+
+            
+            align-items: flex-start; /* vai alinhar pelo começo, por cima, pelo inicio do flex items*/
+            align-items: flex-end; /* vai usar o final para alinhar */
+            align-items: center; /* centralizando os elementos */
+        
+            /* mais de uma linha */
+            align-content: flex-start;
+            align-content: flex-end;
+            align-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div>1</div>
+        <div>2</div>
+        <div class="big">3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>10</div>
+    </div>
+    <!-- <script src="js/tag.js"></script> -->
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #01</title>
+    <style>
+        /* https://caniuse.com/#feat=css-grid */
+        
+        html,
+        body {
+            margin: 20px; /* margem de 20px */
+            height: calc(100% - 40px); /* altura ser 100%, porem foi estraida 40px, 20px de cima e 20px de baixo */
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+
+        body{
+            display: grid; /* Alteramos para "GRID", como podemos ver, após fazer isso e ir na páginda, ele usou todo espaço, ele esticou  Minuto 3:28*/
+            grid-template-columns: 50% 50%; /* agora ficou com 2 colunas, cada coluna com 50% (mostrado no README.MD) */
+            grid-template-columns: repeat(4, 8.33% 8.33% 8.33%); /* essa conta é equivalente a 12 vezes 8.33% */
+            grid-template-columns: repeat(12, 8.33%); /* 12 de 8.33% não mudou nada! */
+            grid-template-columns: repeat(11, 100px) 150px; /* 11 de 100px, e adcionei mais uma de 150px, ou seja, a div 12 terá 150px */
+            grid-template-columns: 200px 20% 1fr; /* Aqui vamos ter 3 colunas, uma de 200px, uma de 20% e outro de um "fragmento", ou seja, o restante */
+            grid-template-columns: 3fr 6fr 3fr; /* Dividi os 12 fragmentos, dois ficara com 3, e um com 6 */
+            
+            grid-template-rows: 50% 25% 12.5% 12.5%; /* Aplicando também para linhas e não só colunas. um ficara com 50% outro com 25% e as outras com 12.5% */
+            grid-template-rows: 100px 1fr ; /* 2 linhas, a primeira formada por 100px e outra por 1 fragmento (o restante) */
+            /* como eu só defini 2, e ainda falta mais 2, essas 2 ira pegar o restante, do que sobrar das outras */
+
+            grid-template-rows: 100px auto; /* a primeira linha ficara com 100px, e as outras ficarão com o resto dividido de forma igualataria */
+
+        }
+
+        .d8 { /* vou mexer exclusivamente da <div> que corresponde a class "d8" */
+            grid-column-start: 2; /* Ele vai começar da Coluna 2 */
+            grid-column-end: 4; /* Ele vai até a linha 4 da coluna, no REAMDE.MD mostra como ficou */
+            grid-column-end: span 2; /* pula 2 casas, com o "span", não mudara nada, por que eu ja pulei 2 casas acima, ele ira para linha 4*/
+            
+            grid-row-start: 3; /* começa o "row" da linha 3 */
+            grid-row-end: 5; /* Termina o "row" na linha 5 */
+            grid-row-end: span 2; /* posso usar span tbm, o span é mais didatico, e de forma mais facil de entendimento */
+        }
+
+        .d10,
+        .d11 {
+            /* podem se sobrepor */
+            grid-column-start: 1;
+            grid-column-end: 3;
+            /* nesse caso de cima, as "d10" e "d11" não irão se sobrepor, eles ficaram um em cima do outro ainda Minuto 20:28 */
+
+            grid-row-start: 5;
+            grid-row-end: span 1; /* Nesse caso houve a sobreposição, estão divindo a mesma casa, o elemento 10 está embaixo no elemento 11 (Minuto 21:18) */
+        }
+
+        .d10 {
+            z-index: 10; /* Profundidade, quem tiver o "z-index" maior, ficara na frente, agora o d10 está aparecendo, a profundidade dele é maior */
+            /* pode ser qualquer número, não precisa ser 10, tem que ser apenas maior */
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+    <div class="d5">5</div>
+    <div class="d6">6</div>
+    <div class="d7">7</div>
+    <div class="d8">8</div>
+    <div class="d9">9</div>
+    <div class="d10">10</div>
+    <div class="d11">11</div>
+    <div class="d12">12</div>
+</body>
+
+</html>

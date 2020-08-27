@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #02</title>
+    <style>
+        html,
+        body {
+            margin: 20px;
+            height: calc(100% - 40px);
+            background-color: lightgray;
+        }
+        
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: solid 5px dodgerblue;
+            background: #fff;
+        }
+
+        body { /* que é o conteiner, o que envolve os 3 elementos, os <div> do <body> */
+            display: grid; /* vai esticar tudo */
+            grid-template-columns: 1fr 1fr 1fr; /* 3 colunas, com 3 fragmentos para cada */
+            
+            /* Eu posso dar nome, por exemplo: */
+            grid-template-columns: 
+                [inicio] 1fr 
+                [metade-1 meio-1] 1fr 
+                [metade-2 meio-2] 1fr [fim]; /* posso dar 2 nomes só pra um também */
+            /* Como são 4 linhas, como mostra Minuto 3:25, eu nomeei as 4 */
+            
+            grid-template-rows: repeat(3, 1fr); /* vai ter 9 células, sera divido em 3 linhas, e tera 9 células, porém só 3 com as 3 <div> */
+        
+            grid-column-gap: 20px; /* entre a coluna, coloquei um gap de 20px, ou seja, tera um separamento de uma linha para outra de 20px*/
+            grid-row-gap: 20px; /* coloquei um gap de 20px, entre a linha, tera um espaçamento */
+                
+            grid-gap: 50px 10px; /*50 de gap na linha e 10px de gap na coluna */
+
+            grid-gap: 10px; /* ele vai dar 10px de gap, tanto pra linha quanto pra coluna, os dois receberão 10px */
+        }
+
+        .d1{
+            grid-column-start: metade-2; /* começa do metade-2 */
+            grid-column-end: fim; /* termina no fim */
+            /* usei através dos nomes dados, no README.MD mostra como ficou */
+        
+            grid-column: meio-1 / fim; /* posso usar assim, é até mais facil, passei da linha meio-1 até a linha fim */
+
+            /* também é possivel usar para linhas */
+            grid-row: 1 / span 2; /* 1° linha vai oucupar 1, e a segunda linha 2 casas (linhas) */
+
+
+            /*
+                row-star column-start row-end column-end 
+                Essa vai ser a ordem, colocada..
+            */
+
+            grid-area: 1 / meio-1 / span 3 / fim; /* ele vai do 1 até o span 3, vai do meio-1 até o fim, dessa forma.. */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+</body>
+
+</html>

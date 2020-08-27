@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Texto</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <style>
+        
+        * {
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            /* Valores Padrões */
+            font-size: 1em; /* Contiunou do mesmo tamanho! */
+            font-size: 100%; /* Padrão também */
+            font-size: 16px; /* Valor Padrão também */
+            font-size: 12pt; /* 12pt padrão também */
+
+            /* Unidades Absolutas */
+            font-size: 100px; /* Tamanho do Pixel é relativo */
+            font-size: 72pt; /* Pontos */
+            font-size: 1in; /* Polegadas */
+
+            /* Unidades Relativasa */
+            font-size: 2.2em; /* 2x maior */
+            font-size: 2.2rem;
+            font-size: 50vh;
+            font-size: 10vw;
+
+            font-family: monospace; /* fontes */
+            font-family: Georgia, serif; /* Procura "Georgia" caso não ache ele procura a "serif" */
+            font-family: Verdana, sans-serif;
+            font-family: 'Indie Flower', cursive; /* Na Linha 7, eu importei esssa fonte. Peguei a fonte do Google Fontes */
+
+            font-weight: 100; /* Seria o Peso da Fonte, ficaria mais negrito */
+            font-style: italic; /* Italico */
+            text-transform: uppercase; /* Todas letras Maiusculas, e tem outras também */
+            /* text-decoration: overline underline line-through;  Linhas tracejadas */
+            /* Tirei a de cima só pra não bagunçar o resto */
+
+            word-spacing: 10px; /* Espaço entre cada palavra */
+            letter-spacing: 20px; /* Separação entre letras de palavras */
+            line-height: 110px; /* Espaçamentos da linha*/
+            text-align: right; /* Texto Alinhado a Direita */
+            text-align: center; /* Alinhado no centro */
+        }
+
+        .botao { /* Mexendo apenas na class "botao" */
+            font-size: 28px;
+            text-decoration: none; /* Tirei a linha da class "botao" */
+            padding: 10px 30px;
+            border-radius: 25px;
+        }
+
+        .destaque {
+            color: #fff;
+            background-color: tomato;
+            box-shadow: 2px 2px 1px 1px #000; /* Aplicando uma Sombra */
+        }
+
+        .destaque:active {/* class, pseudo-class, quando eu clicar vai fazer uma ação */
+            box-shadow: none; /* vai tirar o sobreamennto, após o click. Min 14:26 */
+            /* Clicando no link eu verei a diferença dessse pseudo-class */
+
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p>
+            Que texto
+            <br>legal!!!
+        </p>
+    </div>
+    <a href="http://google.com" class="botao destaque">Google</a> <!-- Aqui tem 2 classes -->
+</body>
+
+</html>

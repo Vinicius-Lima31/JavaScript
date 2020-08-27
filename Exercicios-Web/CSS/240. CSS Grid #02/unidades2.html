@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Unidades #02</title>
+    <style>
+        .fora { /* Por padrão uma <div> já vem 100%*/
+            position: relative;
+            background-color: orange;
+            height: 400px;
+            width: 400px;
+            padding: 50px; /* o paadding é aplicado 50px em cada lado, então valera 500px a altura e largura */
+        }
+
+        .dentro {
+            background-color: mediumvioletred;
+            height: 100px;
+            width: 100%;
+            position: static; /* É a posição padrão, quando não informamos nenhuma, ele usa essa aqui! Vai oucupar apenas o espaço do conteúdo */
+            position: relative; /* Espaço do Conteúdo, não mudou nada */
+            position: absolute; /* Conteudo + padding.. min 6:51*/
+            position: fixed; /* Agora os 100% não está se referindo a <div> .fora*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fora">
+        <div class="dentro"></div>
+    </div>
+</body>
+</html>

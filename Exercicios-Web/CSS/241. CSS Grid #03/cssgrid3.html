@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Grid #03</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        * { /* seletor universal, só para tirar o "padding" e a "margin" */
+            padding: 0;
+            margin: 0;
+        }
+
+        /*
+            Pra cada um dos elementos o <Header>, <Main>, <Footer> e o <Nav>
+            Vou aplicar uma propriedade chamada grid-area, e vou dar um nome pro valor dessa propriedade.
+        */
+
+        header {
+            grid-area: cabecalho; /* aplicando uma label */
+        }
+
+        nav {
+            grid-area: navegacao; /* aplicando uma label */
+        }
+
+        main {
+            grid-area: conteudo; /* aplicando uma label */
+        }
+
+        footer {
+            grid-area: rodape; /* aplicando uma label */
+        }
+
+        /* Essas propriedades do "grid-area" vai ser usada pra definir como nossos elementos vai ser organizado dentro do "grid" */
+        body {
+            display: grid; /* Ficara bem bagunçado, tudo junto */
+            min-height: 100vh;
+            grid-template-columns: 300px 1fr; /* 2 colunas com 300px e outro com 1 fragmento */
+            grid-template-rows: 100px 1fr 100px; /* 3 linhas com 100px, outra com 1 fragmento e outra com 100px */
+            
+            /* Podemos ver que tem 6 espaços nessa "grid", 2 colunas e 3 linhas */
+
+            grid-template-areas: /* através daqui eu irei organizar*/
+                'cabecalho cabecalho' /* vai oucupar 2 linhas */
+                'navegacao conteudo' /* um vai oucupar a navegacao e o outro o conteudo, o conteudo tem 1fr como mostra mais acima */
+                'rodape rodape';
+            /* Uma forma muito boa de organização */
+            /* São 6 celulas, 2 para cabecalho, 1 para navegacao, 1 para conteudo, e 2 para rodape */
+        }
+        @media(max-width: 700px) { /* sera de um formato tipo mobile, mas se se o formato tiver no maximo 700px */
+            body{
+                grid-template-columns: 1fr; /* apenas uma coluna com 1 fragmento (restante) */
+                grid-template-rows: 80px 1fr 100px; /* 4 linhas, terá uma coluna com 4 linhas */
+                grid-template-areas:  
+                    'navegacao'
+                    'conteudo'
+                    'rodape';
+            }
+
+            header {display: none;}
+        }
+
+    </style>
+</head>
+
+<body>
+    <main class="tag">CONTEÚDO</main>
+    <header class="tag">CABEÇALHO</header>
+    <footer class="tag">RODAPÉ</footer>
+    <nav class="tag">NAVEGAÇÃO</nav>
+
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
