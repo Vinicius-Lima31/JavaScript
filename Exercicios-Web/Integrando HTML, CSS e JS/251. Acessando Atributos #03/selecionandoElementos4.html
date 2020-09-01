@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #04</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <p>Início</p>
+    </div>
+    <div>
+        <ul>
+            <li>Pedro</li>
+            <li>Ana</li>
+            <li>Bia</li>
+        </ul>
+    </div>
+    <div>
+        <p>Fim</p>
+    </div>
+    <script>
+        // A interface ""HTMLCollection" representa uma coleção genérica (objeto array) de elementos (na ordem em que aparecem no documento)
+        // e oferece métodos e propriedades para selecioná-los da lista.
+
+        // A interface HTMLElement representa qualquer elemento HTML. Alguns elementos implementam diretamente essa interface,
+        // outros a implementam por meio de uma interface que a herda.
+    
+        function log() {
+            console.log(this)
+        }
+
+        HTMLCollection.prototype.log = log
+        HTMLElement.prototype.log = log
+        NodeList.prototype.log = log
+        Node.prototype.log = log
+
+        const lista = document.querySelector("div ul") // passei uma <div> que tem uma <ul>
+        lista.parentNode.log() /// o Resultado é o Pai, ele vai imprimmir no console, o pai da <ul>
+
+        lista.childNodes.log() // Realmente não compreendi
+
+        const primeiro = lista.firstChild // Primeiro Elemento
+        primeiro.log() 
+        lista.nextSibling.log() // Ele pegou o próximo elemento
+
+        const ultimo = lista.lastChild // Ultimo elemento
+        ultimo.log()
+        ultimo.previousSibling.log() // Elemento anterior
+
+        list.children.log() // Não vem os Textos, e sim os <li> 
+        lista.firstElementChild.log() // traz a primeira <tag> definida dentro da lista
+        lista.lastElementChild.log() // traz a ultima <tag> definida
+
+        lista.parentNode.previousElementSibling.log() // parentNode é a <div> envolvida, e pego o elemento anterior a essa <div> (Minuto 7:25)
+        // No Caso acima, eu peguei o Elemento "inicio" como mostra na página
+
+        lista.parentNode.nextElementSibling.log() // pego o elemento próximo dessa <div> ou seja, o "Fim" como mmostra na página
+        
+    </script>
+</body>
+
+</html>

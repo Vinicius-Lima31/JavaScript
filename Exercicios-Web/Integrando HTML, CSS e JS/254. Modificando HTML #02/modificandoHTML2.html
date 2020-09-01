@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <p>Texto Inicial</p> <!-- Tenho apenas uma <div> com um paragrafo <p> dentro -->
+    </div>
+    <script>
+        const div = document.querySelector("div") // Acessei a <div>
+        div.innerHTML = "Texto Alterado" // o "innerHTML" ele substitui o valor da <div> pelo o que eu coloquei aqui, no caso "Texto Alterado" o "innerHTML" colocou
+        // Foi alterado, ele não tem mais paragrafo <p>, percebe que até mudou o tamanho
+
+        // div.outerHTML = "Texto Alterado" // Diferente do "innerHTML", o "outerHTML" ele altera até a <tag> até a <div> (Minuto 1:43) Mostrado no README.MD
+
+        div.insertAdjacentHTML("beforebegin", "<p>Antes Início</p>") // Antes de começar o elemento no qual estou trabalhando, coloque um determinado elemento, ou seja, antes de tudo, ira colocar esse paragrafo <p>
+        // Adcionei esse paragrafo <p> antes de tudo
+        
+        div.insertAdjacentHTML("afterbegin", "<p>Depois Início</p>") // Será Adcionanda depois do início, dentro da <div>
+        div.insertAdjacentHTML("beforeend", "<p>Antes Fim</p>") // Será Adcionada antes do fim, dentro da <div>
+        div.insertAdjacentHTML("afterend", "<p>Depois fim</p>")
+        
+        console.log(div.innerHTML) // Ele vai imprimir o texto e as tag
+        console.log(div.innerText) // Ele vai imrpimir apenas os textos das tags (sem as tags)
+        
+    </script>
+</body>
+
+</html>

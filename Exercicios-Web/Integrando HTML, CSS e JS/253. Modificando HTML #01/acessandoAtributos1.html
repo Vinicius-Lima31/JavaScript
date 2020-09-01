@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <a href='https://www.cod3r.com.br'>Cod3r</a> <!-- uma <div> com um link da Cod3r -->
+    </div>
+    <div id='primeiro'>
+        <img src='http://files.cod3r.com.br/curso-web/logo-estreita.png' alt='logo'> <!-- Uma Imagem da Cod3r -->
+    </div>
+    <script>
+        const img = document.querySelector("img") // Selecionando a Imagem 
+        console.log("getAttribute", img.getAttribute("src")) // Estou acessando o Atributos da Imagem, através dessa Função, que no caso é o LINK que sera imprimido no console
+        // Acima Estou acessando o "img" e depois o "src"
+
+        console.log("src", img.src) // Outra forma de Acessar o "src"
+        console.log('["src"]', img['src']) // posso usar essa notação também
+        console.log("alt", img.alt) // logo
+
+        console.log('Elemento "img"...................')
+
+        console.log("NodeType", img.nodeType) // todos elementos, atributos, tem uma propriedade chamada "NodeType"
+        // Acima ira imprimir o Número
+        // NodeType: 1 Quer dizer Elemento
+        // NodeType: 2 Quer dizer Atributo
+        // Nesse Site mostra: https://www.w3schools.com/jsref/prop_node_nodetype.asp
+
+        console.log("NodeName", img.nodeName) // Qual nome daquele atributo ou Elemento...
+
+        const src = img.getAttributeNode("src") // Fazendo igual na linha 18, porém estou pegando de outra forma, até mais simples
+        console.log('Atributo "src"..........')
+        console.log("NodeType", src.nodeType) // Imprimi o Titulo
+        console.log("NodeName", src.nodeName) // Imprimi o Nome do Elemento ou Atributo, seja o que for...
+        console.log("NodeValue", src.nodeValue) // Imprimi o valor dele, ou seja, ira imprimir a URL
+
+        const link = document.querySelector("a") // Acessando o LINK
+        console.log('Elemento "a"..............' )
+
+        console.log("href", link.href) // Imprimindo LINK
+        console.log("firstChild.nodeType", link.firstChild.nodeType) // Acessando o filho do "link", e vendo o tipo dele, no caso é um texto, é o que ta escrito dentro da tag: Cod3r
+        link.firstChild.nodeValue = "Novo Texto" // Alterei o Texto que fica dentro da tag, através daqui
+        link.innerHTML = "Novo Texto2" // é uma forma, e até melhor
+    </script>
+</body>
+
+</html>

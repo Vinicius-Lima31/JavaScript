@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #03</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <ul id="compras" destino='escritório' data-urgencia="5"> <!-- Propriedades Personalizdas -->
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        // Tem como sim acessar Prorpriedades Personalizadas através da Notação Ponto, e irei mostrar nessa Aula
+
+        const lista = document.querySelector("#compras") // Eu poderia colocar o "ul" no lugar de "#compras", porém é a forma mais eficiente usar pelo "ID"
+
+        // somente leitura
+        console.log(lista.attributes) // pegando atributos, apenas imprimindo no console
+        console.log(lista.attributes[0]) // acessando o indice 0, "id="compras""
+        console.log(lista.attributes.id) // Acessando ID, igual a linha acima
+        console.log(lista.attributes.destino) // imprimindo propriedade personalizada "destino"
+        console.log(lista.attributes["data-urgencia"]) // imprimindo do dataset como foi mostrado na aula passada, porém através da Notação Ponto
+        lista.attributes.destino = "casa" // Não ira alterar, apenas consigo fazer a leitura
+        console.log(lista.attributes.destino) // Não foi alterado
+    </script>
+</body>
+
+</html>

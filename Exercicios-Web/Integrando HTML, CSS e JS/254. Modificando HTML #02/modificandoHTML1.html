@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Modificando HTML #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'> <!-- <body> marcado com uma "class" "conteudo exercicio"-->
+    <script>
+       // Vamos começar a criar os elementos que vamos inserir no nosso Exemplo
+       const body = document.querySelector("body") // Vou precisar do <body> para poder ensirar os elementos no <body>
+
+       const div1 = document.createElement("div") // Vou criar um Elemento, e vou passar o tipo de Elemento que eu quero criar, no caso eu passei uma <div>
+       div1.classList.add("destaque") // Adcionei a "class" "destaque" na <div> que criei na linha de cima
+       div1.innerHTML = "Primeiro" // No Caso adcionei o conteúdo, adcionei o Texto "Primeiro" dentro da <div>
+
+       const div2 = document.createElement("div") // Criei outro elemento, e vou o tipo <div> o tipo de Elemento que eu quero criar, no caso eu passei uma <div>
+       div2.setAttribute("wm-atributo", "valor") // Setei um atributo
+
+       // Percebe que eu criei tudo isso, mas se eu der um Refresh, não vai acontecer nada, por que eu ainda não adcionei essa <div> no <body>
+       // Continuando aqui o div2...
+       div2.innerHTML = "Segundo" // Adcionando Conteúdo a <div>, adcionando esse texto
+
+       // Irei criar uma 3° <div>, porém dentro dessa <div> terá um paragrafo
+       const p = document.createElement("p") // primeiramente criei um paragrafo, o que foi falado no comentario acima!
+       p.innerHTML = "Terceiro" // Adcionei esse conteúdo dentro do paragrafo que criei na linha de cima
+       
+       const div3 = document.createElement("div") // Agora estou criando essa terceira <div>
+       div3.appendChild(p) // Através dessa função, estou adcionando o "paragrafo" <p>, dentro da <div> "div3"
+       // o appendChild() ele adciona um elemento no Pai, porém no ultimo indice, ele adciona na ultima posição, como não tem ninguém ainda, ele sera o único
+
+
+       body.appendChild(div1) // Agora de fato, será adcionado a <div>1 no <body>, adcionei a primeira <div>
+       body.appendChild(div2) // Será adcionada também, porém na ultima posição, adcionei a <div2> no <body>
+       body.appendChild(div3) // Lembrando que a <div3> tem filhos, ou seja, não será apenas adcionado apenas a <div> e sim os seus filhos, no caso o paragrafo.
+
+       const texto = document.createTextNode("Antes...") // Criação de Texto, criei um nó
+       
+       // Sintaxe do que usarei a abaixo:
+       // ElementoPai.insertBefore(conteúdo, local)
+       div3.insertBefore(texto, div3.childNodes[0]) // Inseri no filho da "div3", o "texto" (que criei na linha 39), na posição antes do indice 0, ou seja, na primeira posição (Minuto 4:54)
+       // insertBefore() é uma forma de inserir de uma forma bem mais cirurgica, ele faz com que eu informe antes de qual elemento eu quero inserir o elemento
+
+       // Vou clonar o div3
+       const div4 = div3.cloneNode(true) /* esse "true" significa que ele clonar os filhos também.                                                                                                                                                                                                                                          
+       const div4 = div3.cloneNode(false) Ele não clonaria os filhos                                                                                                                                                                                                                                                                          */
+       
+       body.appendChild(div4) // Adcionei
+       body.removeChild(div3) // Removi a <div3>, o que sobrou foi a <div4> que foi clonada a partir da <div3>
+       
+    </script>
+</body>
+
+</html>

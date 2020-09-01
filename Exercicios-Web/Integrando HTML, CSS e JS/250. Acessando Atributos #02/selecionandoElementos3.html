@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #03</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        form input,
+        form select,
+        form button {
+            margin: 10px;
+            font-size: 1.6em;
+        }
+    </style>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Formulário</h1>
+    <form name="pesquisa" action="http://www.google.com.br/search"> <!-- Ação para realizar -->
+        <input type="text" name="q" placeholder="Digite o termo..."> <!-- placeholder é o que fica aparecendo dentro da caixa de texto -->
+        <select name="hl">
+            <option value="pt-br">Português (Brasil)</option>
+            <option value="en-us">Inglês (Americano)</option>
+        </select>
+        <button>Pesquisar</button>
+        <!-- Esses nomes não são aleatorios, são nomes suportados pelo Google, "hl" é algo que converte um idioma (eu acho kk) -->
+    </form>
+    <script>
+        console.log(document.forms) // uma das formas que temos de selecionar um formulario
+        console.log(documentt.forms[0]) // formas de obter uma form
+        console.log(document.getElementsByName("pesquisa")) // obtendo por nome, mas não é tao interessante essas 
+        // Só preciso ter cuidado usando isso, por que uma hora pode vim uma Node List ou apenas um elemento
+        // NodeList é uma lista
+
+        console.log(document.pesquisa) // fazendo apenas isso aqui, a gente consegue obter pesquisa
+        console.log(document.pesquisa.q) // entrei dentro de "pesquisa" e peguei um "name" de "imput" chamado "q"
+        
+        document.pesquisa.q.value = "Linux" // mexi no valor, ou seja, o valor de input foi alterado para "Linux", eu indo no "input", eu verei isso
+        document.pesquisa.hl.value = "en-us"
+        console.log(document.pesquisa.hl.selectedIndex) // para ver no console o index selecionado
+
+        /*
+            O name, no contexto de formulário, é importante, pois ele irá especificar o nome da chave do par
+            chave/valor que irá como parâmetro na url definida na action do form. O atributo value, por sua vez,
+            irá determinar o valor associado a essa chave definida pelo name.
+
+            Perceba então que é um atributo diferente, pois meio que define um outro atributo,
+            mas não na própria tag, mas um atributo da url que iremos fazer uma requisição.
+        */
+        
+    </script>
+</body>
+
+</html>
+<!-- AULA BOA para se rever, principalmente pelos nomes adcionandos no name -->
