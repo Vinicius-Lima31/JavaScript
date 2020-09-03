@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div> <!-- Uma <div> com um link dentro dela -->
+        <a espera-um-pouco href="https://google.com.br">Google</a> 
+        <!-- onclick="navegarEm5s(event)""--> <!-- Chamei a função onclick no link, quando ele for clicado, ele irar chamar a função "navegarEm5s" que eu criei no <script>, sou obrigado a passar a palavra "event" dentro -->
+    </div>
+    <script>
+        // Fazer uma operação relacionada ao click
+        function navegarEm5s(e) // A ideia é, eu clicar e ele só vai requisitar o Google depois de 5 Segundos
+        {
+            e.preventDefault() // ou seja, ele vai prevenir que o comportamento padrão ocorra
+            // Em breve irei fazer com que na hora que eu clique sobre o link, seja feito uma requisição para fazer a operação dos 5 segundos
+
+            console.log("Saindo em 5s...")
+            setTimeout (() => 
+            {
+                // Explica melhor o "target" (Minuto 4:58)
+                const link = e.target // target é o elemento <html> que disparou o evento
+                window.location.href = link.href // o "link.href" é o: <a href="https://google.com.br">Google</a> 
+                
+                // window.location.href é o endereço da barra do browser, ou seja, eu alterei a URL do Browser, por o "link.href"
+
+                // Relembrando aqui, se por acaso eu remover o código da linha 19 (preventDefault), não ira funcionar a função, pq ele é responsavel por sair do evento padrão
+
+            }, 5000) // Pra de fato demorar 5 segundos
+        } 
+        // Uma outra abordagem que posso fazer, além de chamar a função dentro do html como eu fiz na linha 13, é da forma que irei fazer aqui abaixo
+        // const a = document.querySelector("a") // Aqui acessei o link <a>
+        // a.onclick = navegarEm5s // Exercutar função após o click em cima do link
+
+        
+        const a = document.querySelector('[espera-um-pouco]') // em cima de um atributo personalizado
+        a.onclick = navegarEm5s // Executar a função
+        // é uma forma muito boa, fazer dessa forma que foi feita agora, criando um atributo personalizado para acessa-lo
+        
+    </script>
+</body>

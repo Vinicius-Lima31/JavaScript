@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5" data-blabla="opa"> <!-- Propriedades Personalizadas -->
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const lista = document.querySelector('div ul[destino="escritório"]') // Acessando a <div>, que tem uma <ul>, que possui uma propriedade personalizada. Eu poderia simplesmente usar ("#compras"), porém estou usando dessa forma, para mostrar o acesso
+        console.log("Elemento 'ul'..............")
+        console.log("childNodes", lista.childNodes) // Vai imprimir os Filhos de Lista, no caso os outros <li>, e tals...
+        // console.log("destino", lista.id) eu conseguiria acessar
+
+        console.log("destino", lista.destino) // o resultado vai ser "undefined", eu não consigo acessar propriedades personalizadas atráves da notação ponto
+
+        // Se eu usar o getAttribute não vai ter problema, essa função considera as funções personalizadas 
+        console.log("getAttribute", lista.getAttribute("destino")) // Aqui de fato, ele conseguiu pegar o atributo sem problemas (Minuto 3:02)
+        console.log("hasAttribute", lista.hasAttribute("destino")) // Conferindo se tem Atributo, imprimir "true" ou "false"
+        
+        // Da mesma forma Que Usamos o get, podemos usar o set
+        lista.setAttribute("destino", "empresa") // eu troquei o valor da propriedade personalizada, agora o valor dela é "empresa"
+        lista.setAttribute("status", "aberto") // como ele não tinha nenhuma propriedade personalizada chamada "status", então ele criou uma chamada "status" e atribuiu o valor "aberto"
+        lista.removeAttribute("destino") // Também posso Remover, acabei de remover a propriedade personalizada "destino"
+
+        // Existem Propriedades personalizdas com préfixo "data", como foi mostrado acima, e no próprio HTML
+        console.log(lista.dataset) // Ira imprimir {urgencia = 5, blabla = "opa"}
+        
+        lista.dataset.urgencia = 4 // Alterei o valor
+        // Eu não poderia usar:
+        // lista.data-urgencia = 4 Por causa do ifem - 
+
+        // Cuidado
+        const label = document.querySelector("label")
+        console.log(label.for) // aqui eu não consigo acessar ela, eu teria que usar htmlFor
+        console.log(label.htmlFor) // assim..
+        console.log(label.getAttribute("for"))
+
+
+        // Através do dataset, eu consigo mexer nos atributos da propriedade personalizada do "data" que possuem ifem e tals...
+        
+    </script>
+</body>
+
+</html>

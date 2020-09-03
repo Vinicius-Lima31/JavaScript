@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Classes</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        Classes
+    </div>
+    <script>
+        // Vamos usar o "classList" para poder manipular a "class" de um determinado Elemento
+        const div = document.querySelector("div") // Acessando
+        const classes = div.classList
+        classes.add("destaque") // A gente já sabe que essa "class destaque" está dentro do arquivo CSS, ela é responsavel por deixar a borda amarela
+        // Acima adcionei a "class" "destaque", que ficou responsavel por deixar a borda amarela
+
+        classes.remove("destaque") // Removi a "class destaque"
+        classes.toggle("destaque") // Se existir ele remove, se não existir ele adciona, o "toggle" funciona dessa forma!
+
+        console.log(classes.contains("destaque")) // estou vendo se está contida ou não, retorna true ou false
+        console.log(classes.length) // Vejo a quantidade, retorna 1, só tem uma "class"
+        classes.toggle("destaque") // ele removeu, ele faz a alternancia, ele remove se tiver, ou ele adciona se não tiver
+        console.log(classes.length) // retorna 0, porque eu removi
+
+        classes.add("destaque1") // Adcionei essa "class"
+        classes.add("destaque2") // Adcionei essa "class"
+        console.log(classes.length) // Imprimi a quantidade, que será 2
+
+        for(let c of classes)
+        {
+            console.log(c) // imprimi "destaque1" "destaque2"
+        }
+
+        classes.forEach(c => console.log(c)) // Também posso usar o forEach
+    </script>
+</body>
+
+</html>

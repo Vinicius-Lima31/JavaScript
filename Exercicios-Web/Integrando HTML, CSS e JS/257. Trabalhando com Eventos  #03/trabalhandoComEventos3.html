@@ -1,0 +1,80 @@
+</html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #03</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+        }
+        
+        .esquerda {
+            height: 100vh;
+            width: 50%;
+            background-color: coral;
+        }
+        
+        .direita {
+            height: 100vh;
+            width: 50%;
+            background-color: cornflowerblue;
+        }
+        
+        .item {
+            border: solid 5px black;
+            background-color: darkgrey;
+            color: white;
+            height: 100px;
+            font-size: 40px;
+            margin: 10px;
+            vertical-align: middle;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="esquerda" wm-dropzone> <!-- class "esquerda" onde ta as divs e com cor laranja-->
+        <div class="item">1</div> 
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    <div class="direita" wm-dropzone></div> <!-- class "direita" onde esta o espaço com background azul -->
+    <!-- Marquei tanto a class "direita" e "esquerda" com atributo personalizado -->
+    <script>
+        // Nessa aula, quero pegar os elementos desse lado e passar pro outro lado
+
+        const items = document.querySelectorAll("[wm-dropzone] .item") // pegando todas as <div>, entro no wm-dropzone e depois .item
+        items.forEach((item, index) => // vou pegar o item o indice
+        {
+            item.draggable = true // eu consigo arrastar ele se segurar, porém sem mover, aapenas arrastando, no README.MD mostra melhor
+
+            // preciso definir que o item tenha um id
+            item.id = item.id || `draggable-item-${index}` // Se não tiver uma id, o id será esse, por isso eu coloquei indice tambémm no forEacch
+
+            item.ondragstart = e =>  // ou seja, ondragstart é quando eu começar a arrastar o elemento
+                e.dataTransfer.setData("item-id", e.target.id) // ele vai setar um evento (e.datatTransfer.setData)
+        })
+
+        const dropzones = document.querySelectorAll("[wm-dropzone]")
+        dropzones.forEach(dropzone =>
+        {
+            dropzone.ondragover = e => e.preventDefault()  // "ondragrover" é quando o úsuario solta o item que ele tava arrastando
+            // Tenho que chamaar o preventDefault() por que se não ele buga, na hora de chamar o proximo indice do forEach, com o preventDefault() ele para e ja vai pro próximo indice
+            dropzone.ondrop = function(e) // peguei o que foi arrastado através do "ondrop"
+            {
+                const id = e.dataTransfer.getData("item-id") // peguei o id que havia sido setado antes
+                const item = document.getElementById(id)
+                // e.target.appendChild(item) // tou fazendo um appendChildd dentro do e.target
+
+                dropzone.appendChild(item)
+            }
+        })
+    </script>
+</body>
+
+</html>

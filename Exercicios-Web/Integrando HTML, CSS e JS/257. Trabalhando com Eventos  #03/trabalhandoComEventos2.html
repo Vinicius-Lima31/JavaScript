@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>Elemento</div>
+    <script>
+        // O Objetivo dessa aula é clicar na <div> e a gente conseguir arrastar ela com o mouse
+        const item = document.querySelector("div") // Primeiro acessamos a <div>
+        item.style.position = "absolute" // Pra eu conseguir posicionar a <div> de forma absoluta
+        
+        item.onmousemove = e => // "e" é o evento
+        {
+            const item = e.target // aqui dentro o "item" representa o e.target
+            item.style.cursor = "move" // Percebe que eu alterei o estilo do curso, significa que quando eu passar o mouse em cima da <div> ele ira mudar o formato do cursor, alterando para uma forma de mover
+            // agora vou ver se o click está selecionado, por que eu só quero mover após clicar
+            // e.target pega o elemento que disparou o evento
+
+            // e.buttons está diferente de zero, então alguem clicou em cima
+            if (e.buttons) // uma propriedade que muda de valor, se tiver clicado o valor vai estar diferente de 0(zero)
+            { // e.target é quem disparou o evento, se eu clicar na <div> quem sera o responsavel por disparar o evento é a propria <div>
+              // e.target é <div>
+                item.style.top = `${e.clientY - (item.clientHeight / 2)}px` // a distancia da <div> pro topo
+                // Em outras palavras:
+                // div.style.top ou seja, eu quero setar a posição dela, de acordo com o topo da Página (Minuto 3:25)
+
+                // ClientY tem haver com o eixo Y, eixo vertical, ou seja o e.ClientY é onde o cursor do mouse estar
+                // clientHeight / 2 é a altura da <div>
+
+                // Só consigo mexer verticalmente, não consigo mexer de um lado pro outro.
+                // Agora iremos fazer pros lados também, horizontal
+
+                item.style.left = `${e.clientX - (item.clientWidth / 2)}px` // distanciando da <div> para esquerda
+
+                // ClientX é o eixo horizontal, onde ficar o cursor
+                // Essa operação que fiz, sobre pegar metade e tals, é para deixar o cursor no meio da <div>
+                
+            }
+        }
+    </script>
+</body>

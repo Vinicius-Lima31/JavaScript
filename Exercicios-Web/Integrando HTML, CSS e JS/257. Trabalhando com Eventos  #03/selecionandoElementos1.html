@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #01</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo">.terceiro .ultimo</div>
+    <script>              
+        // ...
+        // Tem algumas formas de selecionar uns elementos da DOM, a partir de algumas funções iremos mostrar:
+
+        document.getElementById("primeiro").classList.add("destaque") // eu selecionei através do "id", como pode ver na linha 11, tem uma <div> com id "primeiro"
+        // Como ele ja espera uma "id" então não há necessidade de colocar uma cerquilha # 
+        // Eu adcionei a class "destaque" através dessa função acima! 
+
+        const divs = document.getElementsByTagName("div") // percebe que ta no plural, aqui eu irei pegar "tags" div, na função de cima, ele ira pegar apenas um, nessa aqui, eu irei pegar "elementos", não apenas um.
+        // Ele acima retorna uma HTML Collection (é tipo uma lista), por que são mais de uma <div> e não apenas uma
+        // uma forma boa, é transformar essa lista em um Array
+
+        // Array.from() eu transformo em um Array
+        Array.from(divs).forEach(e => e.classList.remove("destaque")) // Estou removendo a "class" "destaque" das <div>, como só tem em uma, então só em uma sera removida (removenndo o contorno amarelo)
+
+        // Outra forma de Transformar um HTML Collection em um Array, é dessa forma:
+        const divsArray = [...divs]
+        divsArray.forEach(e => e.classList.add("destaque")) // adcionando a "class" "destaque" novamente 
+        // Porém agora, eu adcionei para todo Mundo! 
+
+        // Agora abaixo, iremos selecionar um elemento através da "class"
+        const ultimosElementos = document.getElementsByTagName("ultimo") // pegando com class "ultimo", no plural, se tiver mais de um, ele ira pegar tudo, se tiver apenas um, então ele pegara apenas um
+        for(let e of ultimosElementos)
+        {
+            e.classList.remove("destaque") // Removendo a class destaque, da tag que possui uma class chamada "ultimo"
+        }
+
+        // Ou seja, a 3° <div> teve a "class" "destaque" removida
+    </script>
+</body>
+</html>

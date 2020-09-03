@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Selecionar Elementos #02</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body class="conteudo exercicio">
+    <div id="primeiro">#primeiro</div>
+    <div>Segundo</div>
+    <div class="terceiro ultimo"><span wb-attrib>.terceiro .ultimo</span></div>
+    <script>             
+        // Abaixo eu coloquei um #, porque eu queria um ID 
+        document.querySelector("#primeiro").classList.add("destaque") // ele espera qualquer seletor, class, id, tag qualquer coisa, aqui no caso eu só estou pegando um, não varios. Novamente adcionei a "class destaque", contornando de amarelo o seletor
+        
+        // Como vou ficar adcionando e removendo essa class, vou criar 2 funções:
+
+        const selecionar = seletor => // esse "seletor" é como se fosse um "class CSS", um parametro
+            document.querySelectorAll(seletor).forEach(e => e.classList.add("destaque")) // fiz um forEach chamando de "e" como sempre
+
+        const deselecionar = seletor => // Esse seletor é tipo um parametro
+            document.querySelectorAll(seletor).forEach(e => e.classList.remove("destaque")) // Função responsavel por remover 
+
+    // Usando as funções criadas
+    selecionar("div") // Ira selecionar todas as divs, como mostra na 1° função criada
+
+    deselecionar("*") // passei um seletor universal, vai ter tudo deslecionado
+
+    selecionar(".terceiro.ultimo") // tou selecionando alguma "tag", que possui uma class, chamada "terceira" ou "ultima"
+
+    deselecionar("*") // deselecionei tudo
+    
+    selecionar(":not(#primeiro)") // passei "não-primeiro", passei uma pseudo-class, todo mundo que não é da "class primeiro", vai ser selecionado
+    deselecionar("*") /// deselecionando tudo novamente 
+
+    selecionar(":nth-child(1)") // selecionar o primeiro elemento, primeiro filho de algum elemento 
+    deselecionar("*")
+
+    selecionar("div:nth-of-type(1)") // selecionar o primeiro elemento do tipo <div>, eu informei ali no começo
+    deselecionar("*")
+
+    selecionar("[wb-attrib]") // selecionando através de um atributo personalizado 
+    
+    </script>
+</body>
+</html>
